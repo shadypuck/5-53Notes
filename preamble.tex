@@ -7,10 +7,11 @@
 \usepackage[bottom]{footmisc}
 \usepackage{siunitx}
 \usepackage[style=apa]{biblatex}
+\usepackage{xr}
 \usepackage{tikz,graphicx}
 \usepackage{subcaption,float}
 \usepackage{amsmath,amssymb}
-\usepackage{physics}
+\usepackage{physics,bm}
 \usepackage{mhchem}
 \usepackage{chemfig}
 \usepackage[hidelinks]{hyperref}
@@ -41,6 +42,7 @@
 \deffootnote[2.1em]{0em}{0em}{\textsuperscript{\thefootnote}}
 
 \AtBeginDocument{\RenewCommandCopy\qty\SI}
+\DeclareSIUnit{\calorie}{cal}
 
 \addbibresource{\subfix{main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
