@@ -355,5 +355,330 @@
 
 
 
+\section{Bonding Models 2}
+\begin{itemize}
+    \item \marginnote{9/12:}Lecture 2 recap.
+    \begin{itemize}
+        \item QMOT for formaldehyde (see Figure \ref{fig:QmotForm}).
+        \item Recall that the HOMO has a larger coefficient on oxygen, which means that protonation occurs on oxygen instead of carbon.
+        \item No other topics from Lecture 2 are reviewed.
+    \end{itemize}
+    \item Today: Bonding models (continued).
+    \pagebreak
+    \item Lecture outline.
+    \begin{itemize}
+        \item Huckel theory.
+        \item Aromaticity.
+        \item Banana bonds.
+        \item Wave functions.
+    \end{itemize}
+    \item \textbf{Huckel theory}: A quick way to build MOs for conjugated $\pi$-systems.
+    \begin{itemize}
+        \item Qualitatively great and quantitatively bad.
+        \begin{itemize}
+            \item Quick and dirty, but generates useful predictions.
+            \item Not \emph{accurate}, but definitely \emph{useful}.
+        \end{itemize}
+        \item It is used to analyze the connectivity and topology of the $\pi$-system in a planar molecule.
+        \item Key assumptions.
+        \begin{itemize}
+            \item The $\pi$-system is independent of the $\sigma$-network.
+            \item You only consider valence electrons.
+            \item Only neighboring orbitals interact, i.e., only $\pi$-orbitals on adjacent atoms.
+            \item We ignore orbital overlap and electron repulsion.
+        \end{itemize}
+        \item These are some wild simplifications, but it is quick and useful!
+        \item Rules.
+        \begin{itemize}
+            \item The number of $p$-AOs you mix equals the number of new MOs you make.
+            \item The energy of the new MOs is distributed symmetrically around the \textbf{nonbonding energy level}.
+            \item The number of nodes increases by 1 with each energy level.
+            \item The MOs reflect the symmetry of the molecule.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Nonbonding energy level}: The energy of the nonbonding MOs in a Huckel diagram. \emph{Denoted by} $\bm{\alpha}$.
+    \begin{itemize}
+        \item This is also the energy of an electron in an empty $p$-AO.
+    \end{itemize}
+    \item Example Huckel diagram: Ethylene.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.18\linewidth]{HuckelEthylene.JPG}
+        \caption{Huckel diagram for ethylene.}
+        \label{fig:HuckelEthylene}
+    \end{figure}
+    \begin{itemize}
+        \item Let's first confirm that this diagram meets all four Huckel theory rules.
+        \begin{itemize}
+            \item We get two new $\pi$-MOs from two $p$-AOs.
+            \item The energy difference from the nonbonding energy level is called $\beta$.
+            \item The number of nodes did increase from 0 to 1.
+            \item The MOs are symmetric.
+        \end{itemize}
+        \item Thus, this is a valid Huckel diagram!
+        \item Note: Do remember that symmetric splitting is \emph{not} accurate!
+        \begin{itemize}
+            \item On Tuesday, we (correctly) learned that destabilization energy $>$ stabilization energy.
+        \end{itemize}
+    \end{itemize}
+    \item Example Huckel diagram: Allyl groups.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.685\linewidth]{HuckelAllyla.JPG}
+            \caption{Diagram.}
+            \label{fig:HuckelAllyla}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{HuckelAllylb.JPG}
+            \caption{Filling orbitals.}
+            \label{fig:HuckelAllylb}
+        \end{subfigure}
+        \caption{Huckel diagram for allyl groups.}
+        \label{fig:HuckelAllyl}
+    \end{figure}
+    \begin{itemize}
+        \item The lowest energy orbital is called $\psi_1$.
+        \begin{itemize}
+            \item It has 0 nodes.
+        \end{itemize}
+        \item The middle energy orbital is called $\psi_2$.
+        \begin{itemize}
+            \item To maintain symmetry, we have to delete the middle orbital and give opposite phases.
+        \end{itemize}
+        \item The highest energy orbital is called $\psi_3$.
+        \begin{itemize}
+            \item It has the 2 nodes we expect.
+        \end{itemize}
+        \item We now fill electrons for the allyl cation, radical, and anion (Figure \ref{fig:HuckelAllylb}).
+        \begin{itemize}
+            \item These species have 2, 3, and 4 electrons, respectively.
+        \end{itemize}
+        \item Now let's look at where each of these species will react.
+        \begin{itemize}
+            \item Nucleophiles will attack the LUMO of the cation.
+            \item Radicals react with their SOMO (singly occupied molecular orbital).
+            \item Electrophiles will engage the HOMO of the allyl anion.
+        \end{itemize}
+        \item But the LUMO, SOMO, HOMO are all $\psi_2$!
+        \begin{itemize}
+            \item $\psi_2$ has no density at the middle carbon, so all of these species should only react at the terminal carbons.
+            \item This prediction of Huckel theory is experimentally confirmed!
+            \item Intuitively, reacting at the terminals allows you to keep the double bond in play; thermodynamically, you wouldn't want to cleave it by reacting in the middle.
+        \end{itemize}
+    \end{itemize}
+    \item Example Huckel diagram: Benzene.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{HuckelBenzene.JPG}
+        \caption{Huckel diagram for benzene.}
+        \label{fig:HuckelBenzene}
+    \end{figure}
+    \begin{itemize}
+        \item For cyclic systems, we draw a \textbf{Frost circle}.
+        \begin{itemize}
+            \item For benzene, the radius of the Frost circle is $2\beta$.
+        \end{itemize}
+        \item We create $\psi_1,\dots,\psi_6$.
+        \begin{itemize}
+            \item $\psi_2,\psi_3$ and $\psi_4,\psi_5$ are degenerate.
+            \item No electron density on the central $p$-orbitals in $\psi_3$ implies bigger coefficients on the corresponding orbitals in $\psi_2$.
+            \begin{itemize}
+                \item See \textcite{bib:Anslyn} for more!!
+            \end{itemize}
+            \item $\psi_4,\psi_5$ have 2 nodes at angles.
+            \item For $\psi_6$, we have 3 nodes through a hexagon, which is alternating shading.
+        \end{itemize}
+        \item $\alpha$ is the nonbonding level; higher is antibonding, lower is bonding.
+        \item 6 electrons in benzene's bonding $\pi$-system yields stabilization.
+        \begin{itemize}
+            \item In particular, we observe stabilization relative to three ethylenes: An extra \SI[per-mode=symbol]{36}{\kilo\calorie\per\mole} of stabilization!
+            \item Huckel theory can't really compare energy between two molecules; $\beta$ is more a qualitative parameter than a quantitative one.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Frost circle}: A circle in which we inscribe a regular $n$-gon with one point down --- where $n$ is equal to the number of carbons in the cyclic system --- that is used as a guide for drawing Huckel orbitals.
+    \item Example Huckel diagram: Cyclobutadiene.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.25\linewidth]{HuckelCyclobutadiene.JPG}
+        \caption{Huckel diagram for cyclobutadiene.}
+        \label{fig:HuckelCyclobutadiene}
+    \end{figure}
+    \begin{itemize}
+        \item $\psi_1$ has no phase inversion and no nodes.
+        \item There are two different ways to draw the orbitals for $\psi_2,\psi_3$.
+        \begin{itemize}
+            \item We can dive deeper into this difference in \textcite{bib:Anslyn}.
+        \end{itemize}
+        \item No extra stability relative to three ethylenes!
+        \item The model also predicts a ground-state triplet diradical.
+        \begin{itemize}
+            \item Indeed, this molecule is highly reactive and dimerizes spontaneously at \SI{35}{\kelvin}.
+        \end{itemize}
+    \end{itemize}
+    \item We now do a deep dive into aromaticity.
+    \item The history of aromaticity.
+    \begin{itemize}
+        \item In 1855, Hofmann (not Hoffmann) coins the term "aromatic" because these compounds were smelly.
+        \item In 1861, we have Kekul\'{e}'s dream of a snake eating its tail.\footnote{"At least, Kekul\'{e} \emph{said} it was a dream!" - Masha. Good use of reasonable doubt and objectivity in her thinking!} This inspired a circle of electrons.
+        \item In 1925, Robinson describes aromaticity as extra stabilization of a molecule.
+        \item In 1931, Huckel puts forth \textbf{Huckel's rule}.
+    \end{itemize}
+    \item \textbf{Huckel's rule}: Cyclic, planar molecules with $4n+2$ continuous $\pi$-electrons are aromatic.
+    \begin{itemize}
+        \item If you have $4n$ electrons in a cyclic planar molecule with continuous $\pi$-electrons, then you are antiaromatic (extra unstable).
+        \item Thus, these molecules usually distort out of the plane to break antiaromaticity and become nonaromatic.
+        \begin{itemize}
+            \item Both cyclobutadiene and cyclooctatetraene are antiaromatic. Cyclooctatetraene bends into a boat so that its $\pi$-orbitals are pointing toward each other.
+        \end{itemize}
+        \item No phase inversions are allowed; we must connect orbitals without crossing the $\sigma$-plane.
+        \begin{itemize}
+            \item What does this mean??
+        \end{itemize}
+    \end{itemize}
+    \item Features of aromatic compounds.
+    \begin{itemize}
+        \item Aromatic stabilization energy (\SI[per-mode=symbol]{36}{\kilo\calorie\per\mole}).
+        \item Equalization of the bond lengths.
+        \begin{itemize}
+            \item Essentially, the bond lengths do not alternate but rather share an identical bond order of 1.5.
+        \end{itemize}
+        \item Ring currents and magnetic properties.
+        \begin{itemize}
+            \item Those interested in polymer chemistry might be interested in exploiting these properties!
+            \item Specifically, these are properties that come from a sea of electron density.
+        \end{itemize}
+        \item Benzene vs. hexa-1,3,5-triene.
+        \begin{itemize}
+            \item In benzene, all bond lengths are \SI{1.40}{\angstrom}.
+            \item In hexa-1,3,5-triene, the single bonds are \SI{1.45}{\angstrom}, the terminal double bonds are \SI{1.34}{\angstrom}, and the internal double bond is \SI{1.37}{\angstrom}.
+            \item The bond lengths of benzene equalize because benzene has two equally stable major resonance structures.
+            \begin{itemize}
+                \item This is why we often draw benzene as a hexagon with a circle in the middle: This is actually the most accurate picture of it!
+            \end{itemize}
+            \item The bond lengths of hexa-1,3,5-triene do \emph{not} equalize because the only resonance structure we can draw of it is a zwitterion, and thus will be a minor contributor.
+        \end{itemize}
+        \item Different kinds of reactivity.
+        \begin{itemize}
+            \item Example: Electrophilic aromatic substitution.
+            \item This is very much distinct from alkene addition chemistry.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{M\"{o}bius aromaticity}: Aromatic rings have one phase inversion (PI), like in a M\"{o}bius strip.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.18\linewidth]{MobiusAromaticity.JPG}
+        \caption{M\"{o}bius aromaticity.}
+        \label{fig:MobiusAromaticity}
+    \end{figure}
+    \begin{itemize}
+        \item This is a different definition of aromaticity.
+        \begin{itemize}
+            \item We could research aromaticity for the rest of our lives if we wanted to.
+            \item There's a whole field of research devoted to it, and we should look into it if we're interested!!
+            \item A good starting point is \textcite{bib:MobAro}.
+        \end{itemize}
+        \item The single phase inversion is called a \textbf{M\"{o}bius topology}.
+        \item Your PI happens at the sole node.
+        \begin{itemize}
+            \item This one node is allowed in M\"{o}bius aromaticity, but not in Huckel aromaticity
+        \end{itemize}
+        \item The M\"{o}bius topology predicts that compounds are aromatic if they have $4n$ electrons and antiaromatic if they have $4n+2$ electrons.
+        \item To be clear, this content is outside the scope of this class, but Masha wants us to know about it and be able to research it if we so choose.
+    \end{itemize}
+    \item Ring current.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.12\linewidth]{RingCurrent.JPG}
+        \caption{Ring current.}
+        \label{fig:ringCurrent}
+    \end{figure}
+    \begin{itemize}
+        \item Suppose you have an external magnetic field perpendicular to the $\sigma$-plane.
+        \begin{itemize}
+            \item This would induce the $\pi$-electrons to rotate through their MOs.
+            \item These rotating electrons would then create an additional magnetic field.
+            \item This new magnetic field would \emph{reinforce} the external magnetic field outside the aromatic ring and \emph{oppose} the external magnetic field inside the ring.
+            \item The strength of the induced magnetic field is proportional to the current (i.e., the size of the ring).
+        \end{itemize}
+        \item Application (NMR): Ring protons are deshielded (higher $\delta$) outside and shielded (lower $\delta$) inside.
+        \begin{itemize}
+            \item Cyclohexene: No ring current, so we get a bit of downfield shift for the vinyl protons ($\delta$ 5.6).
+            \item Benzene: Has a ring current, so we get a noticeable downfield shift ($\delta$ 7.3).
+            \item\!\!\! [18]annulene: Has a large ring with many $\pi$-electrons, so we get a significant downfield shift for the external protons ($\delta$ 9.3) and a significant \emph{upfield} shift for the internal protons ($\delta$ $-2.9$).
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Quadrupole}: Two dipoles aligned such that there is no net dipole.
+    \begin{itemize}
+        \item Example: The dipole aligned up and down in benzene, as opposed to (for instance) the linear dipole in fluoromethane.
+        \item Lots of applications beyond the scope of this class, but we can look into it if we want.
+    \end{itemize}
+    \item \textbf{Banana bond}: A bent chemical bond that contains an unusually high concentration of $p$-character.
+    \begin{itemize}
+        \item The bent $p$-lobes of banana bonds look like bananas (see Figure \ref{fig:bananaBonds}), hence the name.
+    \end{itemize}
+    \item Example banana bonds: Cyclopropane.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.17\linewidth]{bananaBonds.JPG}
+        \caption{Banana bonds in cyclopropane.}
+        \label{fig:bananaBonds}
+    \end{figure}
+    \begin{itemize}
+        \item Cyclopropane needs more $p$-character because of its \ang{60} bond angles; $p$-character helps bonds bend.
+        \begin{itemize}
+            \item Specifically, the \ce{C-C} bonding orbitals in cyclopropane are $sp^5$-hybridized.
+        \end{itemize}
+        \item The excess of $p$-character in the \ce{C-C} bonds means that the \ce{C-H} bonds of cyclopropane have correspondingly more $s$-character.
+        \begin{itemize}
+            \item This makes the \ce{C-H} bonds in cyclopropane shorter than usual!
+            \item Indeed, there is something of a "conservation" of bonding character: The $s$-character that's not in the $\sigma$-bonds has to go somewhere.
+        \end{itemize}
+        \item Group orbitals (HOMO) degenerate.
+        \begin{itemize}
+            \item The \textbf{Walsh orbitals} have more $\pi$-character, so cyclopropane is $sp^2$-like.
+            \item This means it is a good $\pi$-donor and a bad $\pi$-acceptor.
+            \item Example of donation: The isopropylcyclopropane cation is very stable because all of the $sp^2$-character is getting donated into the carbocation's empty orbital.
+            \item What is going on here??
+        \end{itemize}
+    \end{itemize}
+    \item Wave functions.
+    \begin{itemize}
+        \item Review \textcite{bib:Anslyn}, Chapters 4 \& 14!!
+        \begin{itemize}
+            \item Also look up your Gen Chem or Quantum notes if it's been a while.
+        \end{itemize}
+        \item All bonding theories draw upon QM descriptions of electrons as waves existing in \textbf{orbitals}.
+    \end{itemize}
+    \item \textbf{Orbital}: A wave function that is a specific solution to the \textbf{Schr\"{o}dinger equation}.
+    \begin{itemize}
+        \item Masha draws the $1s,2s,3s$ orbital penetration graph, as well as what these orbitals look like.
+        \item Recall that orbitals have \textbf{lobes} and \textbf{nodes}!
+    \end{itemize}
+    \item \textbf{Schr\"{o}dinger equation}: The following equation, where $E$ is the energy of the electron, $\psi$ is the wave function describing the position of the electron in space, and $H$ is the \textbf{Hamiltonian operator}. \emph{Given by}
+    \begin{equation*}
+        H\Psi = E\Psi
+    \end{equation*}
+    \begin{itemize}
+        \item $\psi^2$ is the probability of finding an electron in a specific position (i.e., the electron density!).
+        \item Big $\Psi$ is the total molecular wave function, and little $\psi$ is a molecular orbital.
+    \end{itemize}
+    \item \textbf{Hamiltonian operator}: A representation of all forces acting on the system, such as the kinetic energy of the electron and nucleus, nuclear-nuclear repulsion, electron-electron repulsion, etc.
+    \item Next week, we'll talk about DFT and approximating solutions to the Schr\"{o}dinger equation. It will be like an intro to computational chemistry!
+    \item Example: Electron density in \ce{H2} MOs.
+    \begin{itemize}
+        \item Masha redraws Figure \ref{fig:MOH2} to start, and Figure 7.3 from \textcite{bib:CHEM26100Notes}.
+        \item The point is that\dots
+        \begin{itemize}
+            \item The bonding MO has a lot of electron density between the nuclei, even though you still have some at the atoms;
+            \item The antibonding MO has minimal to no electron density between the nuclei; the AOs ($\phi_1^2,\phi_2^2$) are very separate.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
