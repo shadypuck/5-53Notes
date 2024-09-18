@@ -1,0 +1,336 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\setcounter{chapter}{2}
+
+\begin{document}
+
+
+
+
+\chapter{???}
+\section{Computational Chemistry}
+\begin{itemize}
+    \item \marginnote{9/17:}Lecture 3 recap.
+    \begin{itemize}
+        \item Huckel theory: A fast way to draw the MOs of conjugated $\pi$-systems.
+        \begin{itemize}
+            \item If the conjugated $\pi$-system in question is cyclic, use a Frost circle.
+        \end{itemize}
+        \item Aromaticity.
+        \begin{itemize}
+            \item Huckel's definition: $4n+2$.
+            \item M\"{o}bius's definition: $4n$.
+            \item Leads to properties like stabilization, quadrupoles, and ring current.
+        \end{itemize}
+        \item Cyclopropane: $sp^2$-like banana bonds (the only thing we need to remember from that discussion).
+        \item Wavefunctions: Solutions to the Schr\"{o}dinger equation.
+    \end{itemize}
+    \item Today: Computational chemistry (an overview).
+    \begin{itemize}
+        \item Computational chemistry is typically an entire class!
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item Methods of computational chemistry.
+        \item Molecular mechanics.
+        \item Semi-empirical methods.
+        \item Ab initio methods.
+        \item Hartree-Fock.
+        \item Density functional theory (DFT).
+        \item Best practices for calculations.
+        \item Properties that are especially easy (or hard) to calculate.
+    \end{itemize}
+    \item Why do we do computational chemistry?
+    \begin{itemize}
+        \item If we could fully solve the Schr\"{o}dinger equation, we could know the properties of all of our electrons!
+        \item However, the Schr\"{o}dinger equation can only be fully solved (practically) for the simplest systems.
+        \begin{itemize}
+            \item For now, at least: People are working on this.
+        \end{itemize}
+        \item As such, we \emph{approximate} solutions instead.
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Computational chemistry}: The science of approximating solutions to the Schr\"{o}dinger equation.
+    \begin{itemize}
+        \item Computational chemistry can be broken up into two general strategies (\textbf{ab initio} and \textbf{empirical} methods) and one in-between strategy called \textbf{semi-empirical} mehods.
+    \end{itemize}
+    \item \textbf{Ab initio} (methods): Make well-defined approximations to the Schr\"{o}dinger equation, and then solve the approximations mathematically. \emph{Etymology} from Latin "from first principles."
+    \begin{itemize}
+        \item Essentially, make your math simpler.
+    \end{itemize}
+    \item \textbf{Semi-empirical} (methods): Replace complicated parts of the Schr\"{o}dinger equation with experimentally derived parameters, such as bond lengths, vibrational frequencies, and more that we can get from spectroscopy.
+    \begin{itemize}
+        \item Essentially, shortcut the hardest parts of solving with experimentally derived features.
+    \end{itemize}
+    \item \textbf{Empirical} (methods): Approximate molecules with force fields that are experimentally derived, and adjust with further experimental parameters.
+    \begin{itemize}
+        \item Essentially, start with reality and derive computational things from that.
+    \end{itemize}
+    \item We now look at some commonly derived methods. The following list is sorted from methods with high \textbf{accuracy} and low \textbf{speed} to methods with low accuracy and high speed.
+    \begin{itemize}
+        \item Methods at the high end of accuracy and the low end of speed (ab initio).
+        \begin{itemize}
+            \item \textbf{Coupled cluster}.
+            \item \textbf{Perturbation theory}.
+            \item \textbf{Density functional theory}.
+            \item \textbf{Hartree-Fock}.
+        \end{itemize}
+        \item Methods in the middle (semi-empirical).
+        \begin{itemize}
+            \item \textbf{Semi-empirical methods}.
+        \end{itemize}
+        \item Methods at the high end of speed and the low end of accuracy (empirical).
+        \begin{itemize}
+            \item \textbf{Molecular mechanics}.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Speed}: Ease of calculations.
+    \item \textbf{Accuracy}: Careful and diligent.
+    \item \textbf{Coupled cluster}: Useful for approximately 10 \textbf{heavy atoms}. \emph{Also known as} \textbf{CC}.
+    \item \textbf{Density functional theory}: Useful for approximately 80 heavy atoms, though we can use more (it just gets slower). \emph{Also known as} \textbf{DFT}.
+    \item \textbf{Hartree-Fock}. \emph{Also known as} \textbf{HF}.
+    \item \textbf{Molecular mechanics}: Useful for hundreds of heavy atoms. \emph{Also known as} \textbf{MM}.
+    \item \textbf{Heavy atom}: Any atom that's not hydrogen.
+    \item In this course, we'll discuss further the bottom four methods in the above list of six.
+    \item Molecular mechanics (MM).
+    \begin{itemize}
+        \item Atoms are treated as balls and springs (this is a classical analogy and thus much easier to simulate).
+        \item We use force fields to describe electrons.
+        \begin{itemize}
+            \item These force fields are derived from experimental data, i.e., choose a force field that gives us the bonds we calculate from XRD or the vibrations we see in IR.
+        \end{itemize}
+        \item Very fast; often considered "quick and dirty."
+        \begin{itemize}
+            \item Gives us a general picture of what we're thinking about.
+        \end{itemize}
+        \item Common application: Very large and flexible systems.
+        \begin{itemize}
+            \item Think proteins, polymers, etc.
+            \item Things that have a lot of degrees of freedom.
+            \item Very useful for chembio, polymer chemistry, etc.
+        \end{itemize}
+        \item Subset application: \textbf{Molecular dynamics} (MD).
+        \begin{itemize}
+            \item Simulating movement; uses MM as a basis.
+        \end{itemize}
+        \item If you're going to use this method, know that it is (in general) only appropriate for approximating the ground states of molecules (not their transition states).
+        \begin{itemize}
+            \item However, MM can be a good starting point for higher-level calculations (i.e., more accurate methods).
+            \item In Orgo, it's mainly used for first approximations to be refined later (and for heavier stuff).
+            \item All the same, it is a super useful tool with tons of applications, and its simplicity should not lead us to discount it.
+        \end{itemize}
+        \item Running MM.
+        \begin{itemize}
+            \item If we have a PC, try clicking the MM2 button in Chem3D (which is part of our ChemDraw package).
+            \item This may not work on Macs; figure this out!!
+            \item PerkinElmer (who developed ChemDraw) initially developed their stuff for Macs; Masha's not quite sure where they dropped the ball.
+        \end{itemize}
+    \end{itemize}
+    \item Semi-empirical quantum mechanical (SQM) methods.
+    \begin{itemize}
+        \item Use empirical parameters to simplify \emph{ab initio} calculations.
+        \begin{itemize}
+            \item Tries to deliver the best of both worlds (speed and accuracy).
+        \end{itemize}
+        \item We can add corrections for missing phenomena and underestimated features.
+        \item Theoreticians (developers) will draw the line on accuracy somewhere, and then organic chemists will say, "this model fails here."
+        \begin{itemize}
+            \item Once that feedback gets into the literature, theoreticians redefine their line.
+            \item They might need to account for $d$-orbitals, London dispersion forces (LDFs), flexibility, solvent, or more.
+            \begin{itemize}
+                \item Methods of accounting for solvent effects are continuously being optimized.
+            \end{itemize}
+            \item It's important to be on top of the literature here, since things are always getting better!
+        \end{itemize}
+        \item Modern implementations (these are getting fast enough to be usable and really good!).
+        \begin{itemize}
+            \item Density function based tight binding (DFTB): Approximate DFT.
+            \item eXtended Tight Binding (xTB)
+            \begin{itemize}
+                \item Developed primarily by the Grimme lab.
+                \item Basically just adding more parameters.
+            \end{itemize}
+        \end{itemize}
+        \item LDFs are becoming increasingly important for selective catalysis, so there's a lot of work to approximate them.
+        \begin{itemize}
+            \item Catalysis is not about partial positive and negative charges so much as it is about electrons flopping around to achieve incredible selectivities in next-gen catalysts.
+        \end{itemize}
+        \item Very fast (seconds) and pretty accurate. Increasingly used, especially for ML and data science.
+        \begin{itemize}
+            \item Nowadays, if you want to do ML, you need these hundreds of experimental data points.
+        \end{itemize}
+    \end{itemize}
+    \item Ab initio methods.
+    \begin{itemize}
+        \item Background theories (neither is technically true, but it is helpful for speed).
+        \begin{itemize}
+            \item \textbf{Born-Oppenheimer approximation}.
+            \item \textbf{Independent electron theory}.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Born-Oppenheimer approximation}: Nuclei are way bigger than electrons (have over 1000 times more mass), so they are basically fixed in space relative to the electrons.
+    \begin{itemize}
+        \item This means that you can treat the nuclei separately; you can use one approach for the nuclei and an entirely different approach for the electrons.
+    \end{itemize}
+    \item \textbf{Independent electron theory}: Electron movements are not correlated to each other; all electrons whiz around independently.
+    \begin{itemize}
+        \item Making this approximation will cause some issues.
+    \end{itemize}
+    \item Hartree-Fock (HF).
+    \begin{itemize}
+        \item Treat electrons as a delocalized cloud with independent electron movement.
+        \begin{itemize}
+            \item Remember the plum pudding model of the atom? This is not that dissimilar from that.
+        \end{itemize}
+        \item This approximation ignores Coulombic interactions (like LDFs).
+        \begin{itemize}
+            \item This becomes very problematic for transition states.
+        \end{itemize}
+        \item HF methods are largely historical today.
+        \begin{itemize}
+            \item There are applications where they're still used today, but not in Orgo and not without an understanding of their shortcomings.
+        \end{itemize}
+    \end{itemize}
+    \item We can run any and all of these computations throughout grad school as MIT students, and we should! They're in our toolbelt now, and we should try them out!!
+    \item Density functional theory (DFT).
+    \begin{itemize}
+        \item Instead of calculating wavefunctions, we're going to calculate electron density.
+        \begin{itemize}
+            \item We're going to do this using \textbf{functionals}.
+            \item We can include functionals for things like Coulombic interactions, etc.\footnote{Maybe what I can be known for in research is custom building computational tools for specific organic problems, and turning that into a workflow that people do. Maybe that's what ML already is.}
+        \end{itemize}
+        \item This is a good workhorse method in organic chemistry.
+        \begin{itemize}
+            \item DFT is appropriate for reaction coordinate mapping, transition states, etc.
+            \item We'll often work with collaborators that can tailor a model to our needs.
+        \end{itemize}
+        \item There are many specific functionals and basis sets.
+        \begin{itemize}
+            \item You have to choose the functional (choose what to include), and then choose the basis sets (how much detail do I need for this calculation, e.g., treating polarization, charge, unpaired electrons more accurately).
+            \item It is best to find a basis set and functional appropriate for our context.
+        \end{itemize}
+        \item Basis sets don't describe all types of elements.
+        \begin{itemize}
+            \item Some describe elements 1-30, others do 1-86.
+            \item Don't be that person who has to redo their entire calculation because they forgot that tin is one of their reagents!
+            \item We often use \textbf{split basis sets} (esp. for transition metals), i.e., certain atoms (i.e., metals) get more functionals.
+            \begin{itemize}
+                \item Carbon, hydrogen, and oxygen (CHO) don't need the craziest level of theory to approximate, but that palladium center will!
+            \end{itemize}
+            \item Think about what level of theory you need for each atom.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Functional}: A function of functions.\footnote{This is the computer science definition; it is largely unrelated to the mathematical definition that is equivalent to linear forms and duals.} \emph{Also known as} \textbf{higher-order function}.
+    \item Best practices for running calculations for our own things.
+    \begin{itemize}
+        \item This part of the lecture is \emph{critical}; it tells us what we need to know to use computational chemistry.
+        \begin{itemize}
+            \item If we want to learn the theory for all of these things, we should read a textbook or take Heather Kulik's class.
+        \end{itemize}
+        \item Use the appropriate level of theory for your needs and capabilities.
+        \item Questions to ask yourself to assess your needs and capabilities.
+        \begin{itemize}
+            \item Do you have a supercomputer? How much time on the supercomputer do you have?
+            \item When do you need this result by? Is your PI breathing down your neck?
+            \item What am I trying to model?
+            \item Is this a thought experiment or something serious?
+        \end{itemize}
+        \item Additional things to consider wrt your needs and capabilities.
+        \begin{itemize}
+            \item Consider speed vs. accuracy.
+            \begin{itemize}
+                \item You can always start at a lower level theory and then ramp it up if you need more accuracy. This is a great general approach.
+            \end{itemize}
+            \item Consider size and flexibility (no HF on proteins, or MM on methane).
+            \item Consider "weirdness": If you've got something that's all inverted and M\"{o}bius like, you're gonna need something more tailor-made.
+            \item Find a \emph{reliable} literature precedent for a similar system.
+            \begin{itemize}
+                \item If you want to model a cationic cyclization, use a precedent paper's level of theory.
+                \item How do I model an iridium catalyst? Find an iridium catalyst paper and go from that!
+            \end{itemize}
+            \item Know how your level of theory works.
+            \begin{itemize}
+                \item Does it account for polarizability? Charge? Solvent? $d$-orbitals?
+                \item It is our responsibility as an experimentalist to know this if we're going to publish it; our PI probably won't be as deep into the nitty-gritty as us.
+            \end{itemize}
+        \end{itemize}
+        \item Don't blindly trust calculations.
+        \begin{itemize}
+            \item Calculations always give you an answer (unless they fail or don't converge). However, just because you get a number doesn't means that that number is accurate!
+            \item Benchmark your calculation with experiments whenever we can. Examples: X-ray structure, ratio of products (we can back-calculate from temperature the activation energy barrier, and from the transition states what ratio of products we expect).
+            \item Redo a couple of calculations at a higher level of theory to see if you get the same answer.
+            \item Chris Cramer (a founding father of computational chemistry): "There is no particular virtue to the speed at which a wrong answer can be obtained."
+        \end{itemize}
+        \item Example of doing calculations wrong: Doing an S\textsubscript{N}1 reaction without solvent. These reactions are so solvent-dependent, and there's no gas-phase cation that will replicate this solution-phase reaction.
+    \end{itemize}
+    \item What's easy to calculate?
+    \begin{itemize}
+        \item Spectra: IR, Raman, NMR.
+        \begin{itemize}
+            \item Masha likes to predict the NMR spectra of wacky intermediates.
+            \item ChemDraw does this for free.
+            \begin{itemize}
+                \item The default solvent is THF; make sure you change it to \ce{CDCl3}!
+            \end{itemize}
+            \item MNova's function is better; it's ML-based, but it also costs money to run?? I think Masha has this wrong for MIT students.
+        \end{itemize}
+        \item Geometries, conformers, and ground state structures.
+        \begin{itemize}
+            \item "Geometry optimization" or "energy minimization" is very common.
+            \item Draw a 3D structure, give it to our program, move atoms, calculate $E$, repeat (let the program perturb the atom's positions a bit) until we reach a \emph{local} minimum.
+            \item This is what we'll do on the problem set.
+            \item If we want to get the \emph{global} minimum, we have to look for lower energy structures (manually, automatically, or a combination of both).
+            \item We often start at a low level of theory and then refine. Start with a search of the chemical space to find some stable conformers, and then pop that into DFT.
+        \end{itemize}
+        \item Frequencies, well-defined transition states, and \textbf{single point calculations}.
+        \begin{itemize}
+            \item Important because transition states are saddle points on the potential energy surface with 1 imaginary frequency corresponding to the bond-making or -breaking event.
+            \item If you have a structure that you think is a ground state, you have to prove this.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Single point calculation}: Calculating the energy of a structure without any other atoms around.
+    \item Note: Nucleophiles typically come in at a \ang{120} angle (the \textbf{B\"{u}rgi-Dunitz angle}), because that's where it's easiest to donate into the $\pi^*$-lobe.
+    \item What's "hard" to calculate?
+    \begin{itemize}
+        \item Caveat: Do your research!!
+        \begin{itemize}
+            \item Many applications require specialized approaches.
+            \item There's an army of computational chemists who are trying to develop niche methods for our little problem; find them, connect with them, collaborate with them, etc.
+            \item It is our responsibility to know what part of a certain experiment is difficult.
+            \begin{itemize}
+                \item Example: In photophysics, you need to know the limitations of certain parts of our model.
+                \item The system will not say, "I'm bad at predicting excited states;" you have to know that.
+            \end{itemize}
+        \end{itemize}
+        \item Things that require more finessing to study.
+        \begin{itemize}
+            \item Open-shell species, e.g., radicals.
+            \item Transition metals: Heather researches how to model TMs with SQM, etc. This is really important and really hard.
+            \item "Unusual structures," e.g., gas-phase plasma nonsense.
+        \end{itemize}
+        \item Thermochemistry.
+        \begin{itemize}
+            \item E.g., thermodynamical parameters, calorimetry, etc.
+            \item There are specific packages that work for this, if we need to look into them.
+            \item Masha doesn't know anything about any of this, but recommends that we can learn them!!
+        \end{itemize}
+        \item Solvent effects, LDFs, etc.
+        \begin{itemize}
+            \item For these topics, the methods are getting better all the time (which is code for, "the programs don't work great yet").
+            \item \textbf{Implicit solvation} vs. \textbf{explicit solvation}.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Implicit solvation}: Treat the solvent as a continuous medium.
+    \item \textbf{Explicit solvation}: Draw solvent molecules and add them to the calculation.
+    \begin{itemize}
+        \item If you think the solvent is stabilizing the transition state in an S\textsubscript{N}1, you need to draw a little THF donating its lone pair to the carbocation.
+        \item This gets complicated in proteins, where we need to identify how many waters we need to draw to accurately represent water; recent papers suggest that effects matter up to 44 \ce{H2O} molecules away!
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\end{document}
