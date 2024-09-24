@@ -123,7 +123,7 @@
         \item Example: ACN. We think about nitrogen having a partial negative charge and carbon having a partial positive charge. This results in a dipole.
         \item Takeaway: Dipoles arise from electronegativity in VBT!
     \end{itemize}
-    \item \textbf{Resonance}: The superposition of several Lewis structures.
+    \item \textbf{Resonance}: The superposition of several Lewis structures. \emph{Antiquated} \textbf{mesomerism}.
     \begin{itemize}
         \item Example: Consider an $\alpha,\beta$-unsaturated ketone. Its resonance structure is a zwitterionic intermediate, and a second resonance structure is a different zwitterion. We have three resonance forms, so that predicts more stable than something with less resonance structures. It also identifies our positive and negative reactive sites.
         \item Resonance usually happens through $\pi$-networks, but it \emph{can} happen through $\sigma$-networks.
@@ -612,7 +612,7 @@
     \end{itemize}
     \item \textbf{Quadrupole}: Two dipoles aligned such that there is no net dipole.
     \begin{itemize}
-        \item Example: The dipole aligned up and down in benzene, as opposed to (for instance) the linear dipole in fluoromethane.
+        \item Example: The dipole aligned up and down in benzene --- perpendicular to the $\sigma$-plane of the molecule --- as opposed to (for instance) the linear dipole in fluoromethane.
         \item Lots of applications beyond the scope of this class, but we can look into it if we want.
     \end{itemize}
     \item \textbf{Banana bond}: A bent chemical bond that contains an unusually high concentration of $p$-character.
@@ -649,6 +649,7 @@
         \item Review \textcite{bib:Anslyn}, Chapters 4 \& 14!!
         \begin{itemize}
             \item Also look up your Gen Chem or Quantum notes if it's been a while.
+            \item Is there anything relevant to review in Chapter 4??
         \end{itemize}
         \item All bonding theories draw upon QM descriptions of electrons as waves existing in \textbf{orbitals}.
     \end{itemize}
@@ -676,6 +677,131 @@
             \item The antibonding MO has minimal to no electron density between the nuclei; the AOs ($\phi_1^2,\phi_2^2$) are very separate.
         \end{itemize}
     \end{itemize}
+\end{itemize}
+
+
+
+\section{Chapter 1: Introduction to Structure and Models of Bonding}
+\emph{From \textcite{bib:Anslyn}.}
+\begin{itemize}
+    \item \marginnote{9/23:}Good outline of the purpose of Chapter 1.
+    \begin{itemize}
+        \item Mostly along the lines of what we've talked about in class.
+    \end{itemize}
+    \item Why bother with simplistic bonding models if we can just compute everything quantum mechanically nowadays?
+    \begin{itemize}
+        \item "A string of computer-generated numbers is just no substitute for a well-developed feeling for the nature of bonding in organic molecules" \parencite[3]{bib:Anslyn}.
+        \item "It is still true --- and will be true for some time --- that descriptive models of bonding that are readily applicable to a wide range of situations are the best way to attack complex problems" \parencite[4]{bib:Anslyn}.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection*{Section 1.1: A Review of Basic Bonding Concepts}
+\begin{itemize}
+    \item Vocab for Gen Chem-level quantum mechanics.
+    \begin{itemize}
+        \item Most of these I know without review.
+    \end{itemize}
+    \item \textbf{Spin paired} (electrons): Two electrons in the same orbital with opposite-signed $m_s$ values.
+    \item \textbf{Correlation}: The ability of an electron to feel the trajectory of another electron and therefore alter its own course so as to minimize Coulombic repulsions and keep the energy of the system to a minimum.
+    \item The strengths and weaknesses of Lewis structures.
+    \begin{itemize}
+        \item Pros: Predict the number of bonds an atom forms, whether it has lone pairs, and whether any double or triple bonds form.
+        \item Cons: Does not describe the structure or reactivity of any given species.
+    \end{itemize}
+    \item Example: Why formal charge is much more a method of "bookkeeping" nowadays than anything accurate.
+    \begin{itemize}
+        \item In the tetramethylammonium cation, we put the formal positive charge on the nitrogen.
+        \item However, computational studies show that since nitrogen is more electronegative than carbon, a $\delta^-$ rests on nitrogen in the actual structure, and every carbon shares \sfrac{1}{4} of the positive charge.
+    \end{itemize}
+    \item VSEPR's geometrically perfect bond angles are only observed in simple, symmetric molecules.
+    \begin{itemize}
+        \item However, words like "tetrahedral" and "trigonal" are broadly used to suggest an idea, even when they're not \emph{strictly} accurate.
+    \end{itemize}
+    \item VSEPR "is not based on any first principles analysis of electronic structure theory. It is a simple way to rationalize observed trends" \parencite[8]{bib:Anslyn}.
+    \begin{itemize}
+        \item Indeed, it is not clear that bonding orbitals or lone pairs really \emph{have} any well-defined notion of size.
+        \item Note that singly occupied orbitals (e.g., radicals) do not have repulsive effects in VSEPR because they are able to bond to doubly occupied orbitals.
+    \end{itemize}
+    \item \textbf{Steric repulsion}: The buttressing of filled orbitals that cannot participate in bonding, where the negative electrostatic field of the electrons in the orbitals is repulsive.\footnote{Don't forget that Alison Wendlandt believes that this definition of sterics is fundamentally flawed, and that overlap is actually beneficial to a point!}
+    \item \textbf{Hybridization}: The method of adding and subtracting atomic orbitals on the same atom.
+    \begin{itemize}
+        \item "Remember that orbitals are mathematical solutions to the Schr\"{o}dinger equation, and that the addition and subtraction of mathematical equations is just an exercise in algebra. It is a perfectly valid operation to add orbitals as long as one also does the corresponding subtraction" \parencite[9]{bib:Anslyn}.
+        \begin{itemize}
+            \item Someday, I should take linear combinations of $s$ and $p$ wave functions and confirm that they're still orthogonal and in the solution space of the Schr\"{o}dinger equation!!
+        \end{itemize}
+        \item It's called hybridization because we're literally forming \emph{hybrids} somewhere between the polar extremes of an $s$ and $p$ orbital!
+        \item As with VSEPR bond angles, VBT hybridizations deviate from the $sp$, $sp^2$, or $sp^3$ ideal in most organic molecules, but we loosely retain these terms regardless to convey an idea.
+    \end{itemize}
+    \item \textcite{bib:Anslyn} goes over a cool connection between the hybridization index (as defined in class) and experimentally observed \ce{{}^1H}-\ce{{}^13C} NMR coupling.
+    \item The localization of electrons in a chemical bond per VBT is exactly the impression of bonding that is given by a Lewis structure!
+    \item Some useful content on polar covalent bonding that is slightly beyond the scope of the class.
+    \begin{itemize}
+        \item "Introducing polarity into a bond strengthens it" \parencite[12]{bib:Anslyn}.
+        \item Pauling electronegativity is based on the BDEs of molecules, while Mulliken electronegativity is based on the IEs of atoms.
+        \begin{itemize}
+            \item Additional electronegativity scales by Nagle, Allen, Sanderson, Allred-Rochow, Gordy, Yuan, and Parr.
+            \item Takeaway: Electronegativity is a hard concept to put your finger on!
+        \end{itemize}
+        \item The real use of electronegativity is in comparing \emph{relative} electronegativities, and all scales more or less agree here.
+    \end{itemize}
+    \item \textbf{Field effect}: The withdrawing of electron density through space, rather than through $\sigma$-bonds.
+    \item Additional irrelevant content.
+    \item Application of quadrupoles: Proving that $sp^2$-\ce{C} is more electronegative than \ce{H}.
+    \item \textbf{Resonance energy}: The energy of stabilization imparted by resonance. \emph{Also known as} \textbf{delocalization energy}.
+    \item Why is delocalization stabilizing from the point of view of quantum mechanics?
+    \begin{itemize}
+        \item Recall that in the particle in a box, the energy levels are given by
+        \begin{equation*}
+            E_n = \frac{n^2h^2}{8mL^2}
+        \end{equation*}
+        \item As $L$ increases (i.e., as we expand the box/delocalize), the energy goes down.
+    \end{itemize}
+    \item Lots more on resonance.
+\end{itemize}
+
+
+\subsection*{Section 1.2: A More Modern Theory of Organic Bonding}
+\begin{itemize}
+    \item Molecular orbital theory has the same predictive power as the models in Section 1.1 (Lewis structures, VSEPR, and VBT), but it can better explain certain structural issues and experimental observations, too.
+    \begin{itemize}
+        \item MO theory extracts certain key concepts and trends that result from the output of quantum mechanical calculations to lead to a more rigorous, descriptive model of organic bonding than Lewis structures, VSEPR, and VBT can.
+    \end{itemize}
+    \item VBT and MO theory are often fairly interconvertable mathematically!
+    \begin{itemize}
+        \item Thus, it is \emph{not} necessarily true that MO theory is "better" than VBT.
+        \item Rather, both models (and any combination thereof) are approximations of the true answer --- a full solution to the Schr\"{o}dinger equation.
+    \end{itemize}
+    \item A more detailed analysis of the QMOT examples from class; definitely worth returning to!!
+\end{itemize}
+
+
+\subsection*{Section 1.3: Orbital Mixing --- Building Larger Molecules}
+\begin{itemize}
+    \item Goes over the mixing of fragments/group orbitals in detail. Relevant to PSet 1!!
+    \item The later sections would likely be quite useful for my development as a chemist, but probably aren't immediately relevant to this course.
+\end{itemize}
+
+
+
+\section{Chapter 14: Advanced Concepts in Electronic Structure Theory}
+\emph{From \textcite{bib:Anslyn}.}
+\subsection*{Section 14.1: Introductory Quantum Mechanics}
+\begin{itemize}
+    \item Some basic and some more advanced quantum mechanics, but all stuff with which I am eminently familiar from my undergrad coursework.
+\end{itemize}
+
+
+\subsection*{Section 14.3: A Brief Overview of the Implementation and Results of HMOT}
+\begin{itemize}
+    \item \textbf{HMOT}: Huckel molecular orbital theory.
+    \item A much more mathematical treatment of Huckel theory, similar to what I saw in CHEM 26100. It does rationalize the benzene coefficients, though, so probably worth returning to!!
+\end{itemize}
+
+
+\subsection*{Section 14.5: Some Topics in Organic Chemistry for Which Molecular Orbital Theory Lends Important Insights}
+\begin{itemize}
+    \item More mathematics of aromaticity, cycles, etc. Probably a bit less useful.
 \end{itemize}
 
 
