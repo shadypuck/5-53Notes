@@ -14,7 +14,7 @@
 \usepackage{physics,bm,xfrac}
 \usepackage{mhchem}
 \usepackage{chemfig}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks,allcolors=black,urlcolor=cyan]{hyperref}
 \usepackage{subfiles}
 
 \MakeOuterQuote{"}
@@ -52,6 +52,8 @@
     curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2}
 }
 \colorlet{grx}{green!50!black}
+\colorlet{orx}{orange!90!yellow!95!black!90}
+\colorlet{ory}{orange!90!yellow!95!black!20}
 
 \graphicspath{{ExtFiles/}}
 
@@ -68,3 +70,4 @@
 
 \newcommand{\e}[1][]{\textup{e}^{#1}}
 \newcommand{\cnc}[1]{[\ce{#1}]}
+\newcommand{\pKa}{\textup{p}K_\textup{a}}
