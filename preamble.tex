@@ -10,7 +10,7 @@
 \usepackage{xr}
 \usepackage{tikz,graphicx}
 \usepackage{subcaption,float}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{physics,bm,xfrac}
 \usepackage{mhchem}
 \usepackage{chemfig}
@@ -44,7 +44,7 @@
 \AtBeginDocument{\RenewCommandCopy\qty\SI}
 \DeclareSIUnit{\calorie}{cal}
 
-\addbibresource{\subfix{main.bib}}
+\addbibresource{\subfix{../main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
 
 \usetikzlibrary{bending,calc}
@@ -55,7 +55,7 @@
 \colorlet{orx}{orange!90!yellow!95!black!90}
 \colorlet{ory}{orange!90!yellow!95!black!20}
 
-\graphicspath{{ExtFiles/}}
+\graphicspath{{../ExtFiles/}}
 
 \setchemfig{atom sep=2em,fixed length=true,bond offset=3pt,cram width=3pt}
 \setcharge{extra sep=3pt}
