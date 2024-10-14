@@ -785,5 +785,424 @@
 
 
 
+\section{Anions}
+\begin{itemize}
+    \item \marginnote{9/26:}Lecture 6 recap: Modes of cation stabilization.
+    \begin{itemize}
+        \item Heteroatoms: Through lone-pair resonance.
+        \item Anchimeric assistance: With neighboring lone pairs (Figure \ref{fig:neighborb}).
+        \item Homoconjugation: With nearby $\pi$-electrons (Figure \ref{fig:homoconjugation}).
+        \item Hyperconjugation: With adjacent $\sigma$-bonding orbitals. (Figure \ref{fig:hyperconjugationa}).
+    \end{itemize}
+    \item Announcements.
+    \begin{itemize}
+        \item Don't cheat on the PSet.
+        \begin{itemize}
+            \item You can probably find papers or the key online, but be responsible academics instead.
+            \item PSets give you a chance to engage with the material; you will not learn if you cheat.
+        \end{itemize}
+        \item Ask for help if you can't make the deadline.
+    \end{itemize}
+    \pagebreak
+    \item Today: Anions.
+    \item Lecture outline.
+    \begin{itemize}
+        \item Acidity.
+        \begin{itemize}
+            \item Gas phase.
+            \item Solution phase.
+        \end{itemize}
+        \item $\pKa$'s.
+        \begin{itemize}
+            \item Common ones.
+            \item Solvent effects.
+            \item Misc. influencing factors.
+        \end{itemize}
+        \item Anion structure and inversion.
+        \item Synthesis of carbanions.
+        \item Reactions of carbanions.
+        \item Kinetic vs. thermodynamic acidity.
+    \end{itemize}
+    \item Thermodynamic stability of an anion.
+    \item \textbf{Acidity} (gas phase): The extent to which anions want to bind a proton in the gas phase. \emph{Given by}
+    \begin{equation*}
+        \ce{R-H <=> R- + H+}\tag*{$\Delta H^\circ=\text{acidity}$}
+    \end{equation*}
+    \begin{itemize}
+        \item Similarities between this definition and that of the HIA!
+        \begin{itemize}
+            \item Acidity is also always measured in the gas phase.
+            \item It is also more useful as a measure of relative stability.
+        \end{itemize}
+        \item Trends in (gas-phase) acidity are not always the same in solution.
+    \end{itemize}
+    \item Example gas-phase acidities.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em,arrow coeff=0.7}
+        \chemnameinit{\chemfig{-[:30](=[2]O)-[:-30]CH_3}}
+        \schemestart
+            \chemname{
+                \chemfig{CH_4}
+            }{416}
+            \arrow(.base east--.base west){0}
+            \chemname{
+                \chemfig{Ph-H}
+            }{400}
+            \arrow(.base east--.base west){0}
+            \chemname{
+                \chemfig{Ph-CH_3}
+            }{377}
+            \arrow(.base east--.base west){0}
+            \chemname{
+                \chemfig{-[:30](=[2]O)-[:-30]CH_3}
+            }{370}
+        \schemestop
+        \chemnameinit{}
+        \caption{Gas phase acidity examples.}
+        \label{fig:acidityGPex}
+    \end{figure}
+    \begin{itemize}
+        \item We can intuitively rationalize these with resonance/EWG stabilization of the conjugate base.
+    \end{itemize}
+    \item \textbf{Acidity} (solution phase): The extent to which anions want to bind a proton in the solution phase. \emph{Given by}
+    \begin{equation*}
+        \ce{R-H_{(aq)} <=> R^-_{(aq)} + H^+_{(aq)}}\tag*{$\pKa=\text{acidity}$}
+    \end{equation*}
+    \begin{itemize}
+        \item A refresher on what exactly "$\pKa$" means.
+        \begin{itemize}
+            \item The dissociation of an Arrhenius acid (exemplified by the above chemical equation) obeys the following mass action expression, where $\Ka$ is the \textbf{dissociation constant}.
+            \begin{equation*}
+                \Ka = \frac{\cnc{R^-_{(aq)}}\cnc{H^+_{(aq)}}}{\cnc{RH_{(aq)}}}
+            \end{equation*}
+            \item To look at the $\Ka$'s in more human-readable units, we transform them to a log scale using the \textbf{p function}:
+            \begin{equation*}
+                \pKa = -\log\Ka \approx \Delta G
+            \end{equation*}
+        \end{itemize}
+        \item Solution-phase acidity is a quantitative measure of anion stability.
+    \end{itemize}
+    \item Some $\pKa$'s to know. (Memorize these!! These are the baseline, and they are a common qual question.).
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em,arrow coeff=0.6}
+        \chemnameinit{\chemfig{-[:30](=[2]O)-[:-30]NH_2}}
+        \schemestart
+            \subscheme{
+                \chemname{
+                    \chemfig{-[:30](=[2]O)-[:-30]OH}
+                }{5}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{Ph-OH}
+                }{10}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{*5([:18]-=-(-H)-=)}
+                }{15}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{-[:30](=[2]O)-[:-30]NH_2}
+                }{15}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{MeOH}
+                }{16}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{-[:30](=[2]O)-[:-30]}
+                }{19}
+            }
+            \arrow{0}[-90]
+            \subscheme{
+                \chemname{
+                    \chemfig{MeO-[:30](=[2]O)-[:-30]-[:30]H}
+                }{24}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{-~-H}
+                }{24}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{Ph-H}
+                }{43}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{Vi-H}
+                }{50}
+                \arrow(.base east--.base west){0}
+                \chemname{
+                    \chemfig{-[:30](-[2]H)-[:-30]}
+                }{51}
+            }
+        \schemestop
+        \chemnameinit{}
+        \caption{$\pKa$'s to know.}
+        \label{fig:pKaex}
+    \end{figure}
+    \begin{itemize}
+        \item These are all measured in \ce{H2O}.
+        \item These all come from the \href{https://organicchemistrydata.org/hansreich/resources/pka/pka_data/evans_pKa_table.pdf}{Evans $\pKa$ table}.\footnote{Not all of Masha's values match the Evans table (e.g., cyclopentadiene is 18.0, not 15). Whose value should we memorize??}
+        \begin{itemize}
+            \item We should bookmark this page and refer to it regularly when we're trying to work out plausible mechanisms!!
+        \end{itemize}
+    \end{itemize}
+    \item Solvent effects on the $\pKa$.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{cSS}
+            \textbf{\ce{R-H}} & {$\textbf{p}\bm{K}_\textbf{a}$ \textbf{(\ce{H2O})}} & {$\textbf{p}\bm{K}_\textbf{a}$ \textbf{(DMSO)}}\\
+            \hline
+            \ce{H-Cl} & -8 & 1.8\\
+            \ce{PhCOOH} & 4.2 & 11.1\\
+            \ce{CH3NO2} & 10 & 17.2\\
+            \ce{H2O} & 15.7 & 32\\
+            \ce{H3CCN} & 25 & 31.3\\
+            \ce{CH2(CN)2} & 11 & 11\\
+        \end{tabular}
+        \caption{$\pKa$'s in \ce{H2O} vs. DMSO.}
+        \label{tab:pKaDMSO}
+    \end{table}
+    \begin{itemize}
+        \item The $\pKa$ of \ce{H2O} is about 15, so it is hard to get accurate measurements in \ce{H2O} for anything less acidic (higher $\pKa$).
+        \item One solution to this problem is to use DMSO as an alternate solvent.
+        \begin{itemize}
+            \item The $\pKa$ of DMSO is $\approx 35$.
+            \item This allows you to characterize a greater range of things.
+            \item DMSO is also very polar (like water), minimizing conflicting aggregation effects.
+        \end{itemize}
+        \item All data on DMSO acidity comes from the \href{https://organicchemistrydata.org/hansreich/resources/pka/pka_data/pka-compilation-reich-bordwell.pdf}{Bordwell $\pKa$ table}.
+        \item $\pKa$'s are typically higher in DMSO than in water, as we can see in Table \ref{tab:pKaDMSO}.
+        \begin{itemize}
+            \item This is because \ce{H2O} is better at anion stabilization than DMSO, so the equilibrium is easier to access.
+        \end{itemize}
+        \item The trends are not always consistent, e.g., \ce{CH2(CN)2}.
+        \begin{itemize}
+            \item When $\pKa$s are similar in different solvents, this tends to be because the anion is being stabilized internally.
+            \item For example, the \ce{(CN)2HC-} anion is stabilized by both resonance and $\sigma$-EWG inductive effects. Since it is internally stabilized, its stabilization is less dependent on solvent effects.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Factors influencing a compound's solution-phase acidity.
+    \begin{enumerate}
+        \item Electronegativity.
+        \begin{itemize}
+            \item More electronegative atoms make acids stronger.
+            \begin{itemize}
+                \item This is because electronegative atoms inductively (i.e., through the $\sigma$-network) withdraw electron density, stabilizing the negative charge through delocalization.
+            \end{itemize}
+            \item Example: \ce{HOAc} and TFA have $\pKa=4.76$ and $0.52$, respectively.
+        \end{itemize}
+        \item Hybridization.
+        \begin{itemize}
+            \item More $s$-character leads to a stronger acid.
+            \begin{itemize}
+                \item Essentially, orbital electronegativity (and hence stability) decreases $s>sp>sp^2>sp^3$.
+                \item This is because $p$-orbitals "feel" the $\delta^+$ nuclear charge less, owing to their node at the nucleus. Therefore, $s$-orbitals are a better place for $\delta^-$ charge to reside in.
+            \end{itemize}
+            \item Example: \ce{-#-H}, \ce{Ph-H}, and \ce{{}^{\emph{i}}Pr-H} have $\pKa=24$, $43$, and $51$, respectively.
+            \item This effect also extends to nitrogen.
+            \begin{itemize}
+                \item Example: Protonated imines are more acidic than protonated amines because their conjugate bases (the neutral imine and amine) have lone pairs in $sp^2$ vs. $sp^3$ orbitals.
+                \item Example: Piperidine is more basic than pyridine because its lone pair is in a relatively destabilized $sp^3$ orbital.
+                \item Good qual question: Use a hybridization argument to differentiate basicities/acidities!!
+            \end{itemize}
+        \end{itemize}
+        \item Delocalization and aromaticity.
+        \begin{itemize}
+            \item A more delocalized anion means a stronger acid.
+            \item Example: Cyclopentadiene and cyclopropene have $\pKa=15$ and 61 because the former deprotonates to an aromatic anion and the latter deprotonates to an antiaromatic anion.
+        \end{itemize}
+        \item Orbital overlap with adjacent atoms.
+        \begin{itemize}
+            \item Donation into adjacent $d$- or $\sigma^*$-orbitals stabilizes anions.
+            \item Example: \ce{R3P^+-{}^-CH2}.
+            \begin{itemize}
+                \item This ylide has a relatively stable anion.
+                \item Ylides are especially stable when the adjacent atom is \ce{S} or \ce{P}; such ylides are synthetically useful (e.g., Swern oxidation and Wittig olefination).
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+    \item Anion structure.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.6\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{structureAniona.png}
+            \caption{Rapid inversion.}
+            \label{fig:structureAniona}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \footnotesize
+            \setchemfig{atom sep=1.4em,arrow coeff=0.7}
+            \setcharge{extra sep=5pt}
+            \schemestart
+                \chemfig{-[:30](=[2]O)-[:-30]\charge{0=$\ominus$}{}}
+                \arrow(.base east--.base west){0}
+                \chemfig{=_[:30]-[:-30]\charge{0=$\ominus$}{}}
+            \schemestop
+            \caption{Resonance stabilized anions.}
+            \label{fig:structureAnionb}
+        \end{subfigure}
+        \caption{Anion structure.}
+        \label{fig:structureAnion}
+    \end{figure}
+    \begin{itemize}
+        \item In general, anions are $sp^3$-hybridized, trigonal pyramidal species.
+        \begin{itemize}
+            \item Recall that Figure \ref{fig:QmotCH3} explains why anions are trigonal pyramidal instead of planar.
+        \end{itemize}
+        \item Inversion is possible through a trigonal planar structure (Figure \ref{fig:structureAniona}).
+        \begin{itemize}
+            \item The inversion barrier for carbanions is an \emph{extremely} low \SIrange[per-mode=symbol]{1}{2}{\kilo\calorie\per\mole}.
+            \item Because of this rapid inversion, anions behave as if they are planar even though they are not!
+        \end{itemize}
+        \item Exception: Resonance stabilized anions are \emph{actually} planar (Figure \ref{fig:structureAnionb}).
+        \begin{itemize}
+            \item This is because in these cases, the negative charge localizes to a $p$-orbital to have better overlap with the $\pi$-system with which it resonantes.
+            \item This gives the carbanion atom an orbital structure of $sp^2+p$.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Some factors can raise the inversion barrier.
+    \begin{enumerate}
+        \item Geometric constraints (i.e., incorporation into a small ring) raise the inversion barrier.
+        \begin{itemize}
+            \item The planar structure of the ring requires some bond angles (e.g., between the anion lone pair and a substituent) to be larger than in the pyramidal structure.
+            \item Example: The cyclopropanide anion.
+        \end{itemize}
+        \item More electronegative substituents raise the inversion barrier.
+        \begin{itemize}
+            \item VBT explanation.
+            \begin{itemize}
+                \item Electronegative groups prefer to bind to orbitals with more $p$-character (\textbf{Bent's rule}) since it's easier to "steal" those electrons because they're further from the nucleus.
+            \end{itemize}
+            \item MO theory explanation.
+            \begin{itemize}
+                \item Consider the \textbf{D}-MO in Figure \ref{fig:QmotCH3}, which is the HOMO for an anion.
+                \item In the pyramidal structure, the $p$-AO in \textbf{D} will hybridize into an $sp^3$-orbital, shedding some of its $p$-character. But per the "conservation of bonding character" discussed in Figure \ref{fig:bananaBonds}, this $p$-character will infuse the bonds to the (now electronegative) substituents.
+                \item Electronegative substituents then want this influx of $p$-character, lowering the energy.
+                \item Is this it, or am I missing something else??
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+    \item Other \ce{XR3} structures with 8 electrons.
+    \begin{itemize}
+        \item Consider \ce{H3C-}, \ce{H3N}, \ce{F3N}, and \ce{H3P}.
+        \item Their respective inversion barriers are \SIrange[per-mode=symbol]{1}{2}{\kilo\calorie\per\mole}, \SI[per-mode=symbol]{5}{\kilo\calorie\per\mole}, \SI[per-mode=symbol]{50}{\kilo\calorie\per\mole}, and \SI[per-mode=symbol]{35}{\kilo\calorie\per\mole}.
+        \item Thus, \ce{H3C-} and \ce{H3N} are effectively planar, and \ce{F3N} and \ce{H3P} are pyramidal.
+        \begin{itemize}
+            \item \ce{F3N} is pyramidal due to its electronegative substituents.
+            \item \ce{H3P} is pyramidal due to the HOMO of \ce{P} being even more stabilized by its larger $3p$-orbital.
+        \end{itemize}
+        \item Implication: We can have chirality at \ce{P}, but rarely at \ce{N}.
+    \end{itemize}
+    \item Synthesis of carbanions: Two main ways.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=4pt}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{-[:30](=[2]O)-[:-30]}
+                \arrow{->[base]}
+                \chemleft{[}\subscheme{
+                    \chemfig{-[:30](=[2]O)-[:-30]\charge{0=$\ominus$}{}}
+                    \arrow{<->}
+                    \chemfig{-[:30](-[2]\charge{0=$\ominus$}{O})=^[:-30]}
+                }\chemright{]}
+            \schemestop
+            \caption{Deprotonation.}
+            \label{fig:caSynthesisa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(=-=(-[,0.8]Cl)-=-)}
+                \arrow{->[\ce{Li} or \ce{{}^{\emph{n}}BuLi}]}[,1.6]
+                \chemleft{[}\subscheme{
+                    \chemfig{*6(=-=\charge{30=$\ominus$}{}(-[,0.8,,,opacity=0]\charge{0=$\oplus$}{Li})-=-)}
+                    \arrow{<->}
+                    \chemfig{*6(=-=(-[,0.8]Li)-=-)}
+                }\chemright{]}
+            \schemestop
+            \caption{Metal-halogen exchange.}
+            \label{fig:caSynthesisb}
+        \end{subfigure}
+        \caption{Synthesis of carbanions.}
+        \label{fig:caSynthesis}
+    \end{figure}
+    \begin{itemize}
+        \item A carbanion created by base deprotonation typically must be stabilized (e.g., by resonance).
+        \item Metal-halogen exchange is typically used to create aryl, vinyl, and primary alkyl anions.
+        \item Proton transfer and lithium-halogen exchange are among the fastest \emph{inter}molecular reactions common in organic chemistry.
+        \begin{itemize}
+            \item Some \emph{intra}molecular reactions can be faster, e.g., 1,2-hydride shifts.
+            \item It is important to know such relative rates for reaction planning.
+            \item Caveat: Proton transfer from heteroatoms is much faster than proton transfer from carbon ($k_\text{rel}\approx\num{e6}$). This is why we often talk about acidic \ce{X-H} bonds, e.g., \ce{RCOOH}.
+        \end{itemize}
+        \item Note: \ce{B-H} bonds are \textbf{hydridic} (think inorganic), not protic??
+    \end{itemize}
+    \pagebreak
+    \item Reactions of carbanions.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]\charge{[extra sep=5pt]0=$\ominus$}{}-[,0.4,,,opacity=0]}
+            \arrow{->[\ce{E+}]}
+            \chemfig{R-[:30]-[:-30]E}
+        \schemestop
+        \caption{Reactions of carbanions.}
+        \label{fig:caReaction}
+    \end{figure}
+    \begin{itemize}
+        \item Anions are nucleophilic and basic.
+        \item They react with electrophiles, such as protons and metals.
+    \end{itemize}
+    \item Kinetic vs. thermodynamic acidity.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{acidityKinTherma.png}
+            \caption{Two deprotonation sites.}
+            \label{fig:acidityKinTherma}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{acidityKinThermb.png}
+            \caption{The energy diagram.}
+            \label{fig:acidityKinThermb}
+        \end{subfigure}
+        \caption{Energy differences governing kinetic and thermodynamic acidity.}
+        \label{fig:acidityKinTherm}
+    \end{figure}
+    \begin{itemize}
+        \item Rate of deprotonation varies based on whether our base attacks site A or B (Figure \ref{fig:acidityKinTherma}).
+        \item Site B has less steric clutter, so deprotonation is easier there.
+        \begin{itemize}
+            \item This ease of deprotonation manifests as a lower energy $\text{B}^\ddagger$ relative to $\text{A}^\ddagger$ (Figure \ref{fig:acidityKinThermb}).
+            \item To form this enolate, we should use a base such as LDA that is sterically bulky and has essentially irreversible deprotonation, so we will be under kinetic control.
+        \end{itemize}
+        \item On the other hand, \textbf{Zaitsev's rule} tells us that the tetrasubstituted enolate we obtain by deprotonating at site A is more thermodynamically stable than the trisubstituted one we obtain by deprotonating at site B.
+        \begin{itemize}
+            \item This difference in thermodynamic stability manifests as a lower energy A relative to B (Figure \ref{fig:acidityKinThermb}).
+            \item To form this enolate, we should use a base such as an amine or alkoxide that has reversible deprotonation, so we eventually form the thermodynamic product.
+        \end{itemize}
+        \item Great explanation of this phenomenon in Figures 5.3-5.7 (esp. Figures 5.5-5.6) of \textcite{bib:CHEM22200Notes}.
+    \end{itemize}
+    \item \textbf{Zaitsev's rule}: The more substituted alkene is the more stable one.
+\end{itemize}
+
+
+
 
 \end{document}
