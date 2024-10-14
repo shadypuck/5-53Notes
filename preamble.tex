@@ -50,7 +50,8 @@
 
 \usetikzlibrary{bending,calc}
 \tikzset{
-    curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2}
+    curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2},
+    ovbnd/.style={white,very thick,double=black,double distance=0.4pt}
 }
 \colorlet{grx}{green!50!black}
 \colorlet{orx}{orange!90!yellow!95!black!90}
@@ -73,3 +74,12 @@
 \newcommand{\cnc}[1]{[\ce{#1}]}
 \newcommand{\pKa}{\textup{p}K_\textup{a}}
 \newcommand{\Ka}{K_\textup{a}}
+\newcommand{\rc}{
+    {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize $+$};}}
+}
+\newcommand{\ra}{
+    {\tikz{\node[inner sep=0pt,label={[below=4pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize $-$};}}
+}
+\newcommand{\rca}{
+    {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize $\pm$};}}
+}
