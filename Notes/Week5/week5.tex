@@ -656,5 +656,568 @@
 
 
 
+\section{Carbenes}
+\begin{itemize}
+    \item \marginnote{10/3:}Lecture 8 recap.
+    \begin{itemize}
+        \item Radicals are shallow pyramids with low inversion barriers.
+        \item They are stabilized by hyperconjugation and resonance.
+        \item They are destabilized by electronegative atoms and $s$-character since they are electron deficient.
+        \item $\pi$-EWGs stabilize radicals \emph{and} make them electrophilic.
+        \begin{itemize}
+            \item On the other hand, $\sigma$-EWGs (e.g., nearby halogens) \emph{only} destabilize radicals.
+        \end{itemize}
+        \item EDGs stabilize radicals and make them nucleophilic.
+        \item You can make persistent radicals (i.e., radicals that \emph{persist} over long timeframes/are kinetically stable) by using bulky steric blocking groups to prevent dimerization.
+        \begin{itemize}
+            \item Recall that persistent radicals are still not thermodynamically stable.
+        \end{itemize}
+    \end{itemize}
+    \item Today: Carbenes.
+    \begin{itemize}
+        \item This is the last lecture in our "reactive intermediates" series.
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item Orbital structure of carbenes (i.e., the origins of singlet vs. triplet states).
+        \item Substituent effects on carbene stability and state.
+        \item Synthesis of carbenes.
+        \item Carbene reactivity.
+        \item How carbene orbitals determine the transition-state angle of approach.
+    \end{itemize}
+    \item Recall the Walsh diagram for \ce{CH2}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{WalshCH2.JPG}
+        \caption{Walsh diagram for \ce{CH2}.}
+        \label{fig:WalshCH2}
+    \end{figure}
+    \begin{itemize}
+        \item Masha redraws Figure \ref{fig:QmotCH2}, but adds a higher-energy \textbf{E} orbital that is antibonding.
+        \begin{itemize}
+            \item We will soon see that this \textbf{E} orbital is the LUMO of a so-called "triplet carbene."
+            \item The \textbf{E} orbital also goes down in energy slightly when the carbene is bent.
+        \end{itemize}
+        \item Additional change from Figure \ref{fig:QmotCH2}: Per QMOT Rule 7 in \textcite{bib:Anslyn}, \textbf{C} also goes down a bit more to \textbf{C${}^{\bm{\prime}}$} via secondary mixing and hybridization to an "$sp^2$-like" orbital.
+        \item Populating 6 electrons gives us a triplet diradical for linear, and a singlet for bent.
+        \begin{itemize}
+            \item The $sp^2$-like \textbf{C${}^{\bm{\prime}}$} ends up being our HOMO for singlet carbenes!
+        \end{itemize}
+    \end{itemize}
+    \item Sergei: Why don't secondary bonding interactions stabilize \textbf{D}?
+    \begin{itemize}
+        \item Because the hydrogen orbitals are in the nodal plane of the constituent $p$-orbital, so they don't participate in this MO.
+        \item It's probably a symmetry thing.
+    \end{itemize}
+    \item \textbf{Multiplicity}: The following number, where $S$ is the sum of the electron spins $m_s$. \emph{Given by}
+    \begin{equation*}
+        2S+1
+    \end{equation*}
+    \begin{itemize}
+        \item Example: All electrons are paired, save two electrons with parallel spins as in the linear carbene.
+        \begin{itemize}
+            \item $S=1/2+1/2=1$, so the multiplicity is $2(1)+1=3$. We call this a "triplet."
+        \end{itemize}
+        \item Example: \emph{All} spins are paired as in the bent carbene.
+        \begin{itemize}
+            \item $S=0$, so the multiplicity is $2(0)+1=1$. We call this a "singlet."
+        \end{itemize}
+        \item This proves that our linear form is a \textbf{triplet carbene} and our bent form is a \textbf{singlet carbene}.
+    \end{itemize}
+    \item \textbf{Triplet} (carbene): A carbene with two unpaired electron spins. \emph{Denoted by} \textbf{T}.
+    \item \textbf{Singlet} (carbene): A carbene with all electron spins paired. \emph{Denoted by} \textbf{S}.
+    \item Why would we favor a singlet carbene over a triplet, or vice versa?
+    \begin{itemize}
+        \item It comes down to Hund's rule: We pay an energetic penalty for pairing electrons, and we pay an energetic penalty for putting electrons in higher orbitals, so we'll pay whichever is less.
+        \item Implication: As \textbf{C} and \textbf{D} get close in energy, we favor the triplet; as \textbf{C} and \textbf{D} get further apart, the singlet is favored.
+    \end{itemize}
+    \item The \textbf{C${}^{\bm{\prime}}$} and \textbf{D} orbitals in singlet and triplet carbenes.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.45\linewidth]{CarbeneSTa.JPG}
+            \caption{Triplet carbene.}
+            \label{fig:carbeneSTa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{CarbeneSTb.JPG}
+            \caption{Singlet carbene.}
+            \label{fig:carbeneSTb}
+        \end{subfigure}
+        \caption{Singlet vs. triplet carbene orbitals.}
+        \label{fig:carbeneST}
+    \end{figure}
+    \begin{itemize}
+        \item As we would expect from Figure \ref{fig:WalshCH2}, triplet carbenes are more linear and singlet carbenes are more bent.
+        \begin{itemize}
+            \item However, the different isn't as big as we might expect: The actual angles are \ang{136} and \ang{105}.
+        \end{itemize}
+        \item We say that triplet carbenes have "diradical character" since we put an unpaired electron in both \textbf{C${}^{\bm{\prime}}$} and \textbf{D}.
+        \item We say that singlet carbenes have "cation + anion character" since we put two paired electrons in the $sp^2$-like \textbf{C${}^{\bm{\prime}}$} orbital and none in the $p$-like \textbf{D} orbital.
+        \begin{itemize}
+            \item Note that this makes \textbf{C${}^{\bm{\prime}}$} our HOMO and \textbf{D} our LUMO.
+        \end{itemize}
+        \item Implication: Triplet carbenes react as diradicals, and singlet carbenes react as cations and anions.
+    \end{itemize}
+    \item Let's now discuss some ways we can push carbenes to favor the singlet state, or the triplet state.
+    \begin{itemize}
+        \item Specifically, we'll discuss the effects of placing $\pi$-donors, $\pi$-acceptors, $\sigma$-EWGs, and multiple bonds (e.g., for conjugation) near the carbene.
+    \end{itemize}
+    \item \textbf{Singlet-triplet gap}: The difference in energy between the singlet and triplet states of a carbene.
+    \item Simple dialkyl carbenes favor the triplet state.
+    \begin{itemize}
+        \item Example: \chemfig{H_2\charge{[extra sep=2pt,.radius=0.1ex]0=\:}{C}}\ \ favors the triplet state by \SI[per-mode=symbol]{8.5}{\kilo\calorie\per\mole}.
+    \end{itemize}
+    \item $\pi$-donor substituents stabilize carbenes and favor the singlet state.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.3\linewidth]{carbenePiDonora.JPG}
+            \caption{Hyperconjugation.}
+            \label{fig:carbenePiDonora}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{carbenePiDonorb.JPG}
+            \caption{MO diagram.}
+            \label{fig:carbenePiDonorb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \footnotesize
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:-52.5]\charge{0=\:}{}-[@{1}:-127.5]R_2@{N}\charge{90=\:}{N}}
+                    \arrow{<->}
+                    \chemfig{R-[:-52.5]\charge{[extra sep=5pt]0=$\ominus$}{}(-[,0.4,,,opacity=0])=_[:-127.5]R_2@{N2}\charge{[extra sep=5pt]0=$\oplus$}{N}}
+                }\chemright{]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{2pt}] (N) to[out=100,in=142.5,looseness=2.5] (1);
+            }
+            \caption{Resonance.}
+            \label{fig:carbenePiDonorc}
+        \end{subfigure}
+        \caption{$\pi$-donor substituents stabilize carbenes and favor the singlet state.}
+        \label{fig:carbenePiDonor}
+    \end{figure}
+    \begin{itemize}
+        \item Example $\pi$-donor substituents: Neighboring lone pairs from atoms like \ce{N}/\ce{O}/\ce{X}.
+        \begin{itemize}
+            \item Additional example: \textbf{NHCs}.
+        \end{itemize}
+        \item $\pi$-donors favor the singlet state because they stabilize cations.
+        \begin{itemize}
+            \item Intuitively, we can think of this as the electron density from a $\pi$-donor "pushing out" the radical electron from \textbf{D} and moving it into \textbf{C${}^{\bm{\prime}}$}.
+        \end{itemize}
+        \item More accurately, molecular orbital theory tells us that $\pi$-donors stabilize the high-energy, cationic \textbf{D}-orbital through hyperconjugation (Figure \ref{fig:carbenePiDonora}).
+        \item Formally, this hyperconjugation is manifested as a pseudo-$\pi$-bonding interaction (Figure \ref{fig:carbenePiDonorb}).
+        \begin{itemize}
+            \item \textbf{D} mixes with a nonbonding lone pair $n_{\ce{X}}$ to stabilize the lone pair and form a new, higher-energy LUMO.
+            \begin{itemize}
+                \item Intuitively, the lone pair is stabilized because it has gotten to delocalize more!
+                \item This new LUMO is lower than \textbf{E} in energy.
+            \end{itemize}
+            \item In the process, \textbf{D} is effectively moved way up in energy in the Walsh diagram (Figure \ref{fig:WalshCH2}), forcing the carbene's electrons into \textbf{C${}^{\bm{\prime}}$}.
+        \end{itemize}
+        \item One last way of representing this interaction is via resonance (Figure \ref{fig:carbenePiDonorc}).
+        \begin{itemize}
+            \item This resonance structure reveals that the carbene electrons are properly an anion.
+        \end{itemize}
+        \item To recap, there are \emph{three} ways we can think about carbene stabiliation by $\pi$-donors: Hyperconjugation, MO diagrams, and resonance diagrams.
+    \end{itemize}
+    \item \textbf{\emph{N}-Heterocyclic carbene}: \emph{Also known as} \textbf{NHC}. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.3\linewidth]{NHC.JPG}
+        \caption{\emph{N}-heterocyclic carbene.}
+        \label{fig:NHC}
+    \end{figure}
+    \item $\sigma$-EWGs stabilize carbenes and favor the singlet state.
+    \begin{itemize}
+        \item A $\sigma$-EWG is basically just an electronegative substituent.
+        \item $\sigma$-EWGs stabilize carbenes because they stabilize anions.
+        \begin{itemize}
+            \item Recall that $\sigma$-EWGs also \emph{destabilize} radicals!
+        \end{itemize}
+        \item Example: \chemfig{F_2\charge{[extra sep=2pt,.radius=0.1ex]0=\:}{C}}\ \ favors the singlet state by $\sim\SI[per-mode=symbol]{50}{\kilo\calorie\per\mole}$.
+    \end{itemize}
+    \item $\pi$-acceptor substitutents stabilize carbenes and favor the triplet state.
+    \begin{itemize}
+        \item Examples: Carbonyls, sulfones (\ce{SO2R}), \ce{NO2} groups, boron, etc.
+        \item These groups mix with \textbf{D} just like in Figure \ref{fig:carbenePiDonorb}, except that the new, lower-energy orbital is now empty!
+        \begin{itemize}
+            \item This new, lower-energy orbital is our LUMO.
+            \item Since it has been stabilized, it is now close in energy to the \textbf{C${}^{\bm{\prime}}$}-orbital.
+            \item This allows you to release the spin pairing energy by forming the triplet state.
+        \end{itemize}
+        \item These substituents also makes carbenes more electrophilic.
+    \end{itemize}
+    \item Conjugation stabilizes carbenes and favors the triplet state.
+    \begin{itemize}
+        \item Example groups that can conjugate with carbenes: Alkenes, alkynes, and arenes.
+    \end{itemize}
+    \item Synthesis of carbenes.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{carbeneSynthesisa.JPG}
+            \caption{$\alpha$-elimination.}
+            \label{fig:carbeneSynthesisa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{carbeneSynthesisb.JPG}
+            \caption{Diazo compounds.}
+            \label{fig:carbeneSynthesisb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{carbeneSynthesisc.JPG}
+            \caption{NHCs.}
+            \label{fig:carbeneSynthesisc}
+        \end{subfigure}
+        \caption{Synthesis of carbenes.}
+        \label{fig:carbeneSynthesis}
+    \end{figure}
+    \begin{itemize}
+        \item We almost always synthesize carbenes via $\alpha$-elimination (Figure \ref{fig:carbeneSynthesisa}).
+        \begin{itemize}
+            \item If you're forming a carbocation and a carbanion at the same time, you're forming a carbene.
+            \item We can draw $\alpha$-elimination as a concerted or stepwise mechanism.
+            \item To deprotonate a secondary halide, we need a strong base.
+        \end{itemize}
+        \item Aside (practical consideration): Don't run strongly basic reactions in \ce{CHCl3}! Even something like \ce{KO{}^{\emph{t}}Bu} can form dichlorocarbenes from chloroform in solution.
+        \item Diazo compounds can also form carbenes pretty easily (Figure \ref{fig:carbeneSynthesisb}).
+        \item NHCs can form from an aromatic salt and a strong base (Figure \ref{fig:carbeneSynthesisc}).
+        \begin{itemize}
+            \item These aren't so much of a recent development anymore; they've definitely left their mark on organic chemistry.
+            \item These are important catalysts and ligands for transition metal catalysis.
+            \item If the \ce{R}-groups are small, then NHCs will dimerize to form a double bond.
+        \end{itemize}
+        \item Aside (story): When Masha gave this lecture last year, she talked about how you can put NHCs on quantum dots (to do cool things) in honor of Moungi's Nobel Prize.
+    \end{itemize}
+    \item Aside (chemis-tea): On the Nobel Prize.
+    \begin{itemize}
+        \item You get a medallion made of solid gold for you to keep and a few (cheaper) replicas to display.
+        \item You have to pay for the replicas, though. In fact, you have to pay for a lot: They take the expenses for flights, tickets to the gala, etc. out of your Nobel winnings (like 40 grand in total).
+        \item This was both Moungi's and Schrock's experience, which Masha found out when she had lunch with Schrock last week during his visit.
+    \end{itemize}
+    \item Aside (chemis-tea): Get a tungsten wedding ring! Aqua regia will eat a gold or silver wedding band.
+    \item Most synthetically useful reactions involve \textbf{carbenoids}, i.e., metal carbenes.
+    \begin{itemize}
+        \item We won't talk about carbenoids in here because that's a topic for 5.44 - Organometallics, which we can take next year with Alison if we want.
+        \item To be clear, we'll only talk about \textbf{free} carbenes in this class.
+    \end{itemize}
+    \item \textbf{Free} (carbene): A carbene that is not bound to a metal.
+    \item We will now begin discussing the reactivity of carbenes.
+    \begin{itemize}
+        \item Singlet (cation/anion) and triplet (diradical) carbenes naturally react differently.
+        \item Carbene reactivity is easier to grasp than the carbene stability stuff from earlier :)
+    \end{itemize}
+    \item We'll begin by discussing carbenes' reactivity toward $[2+1]$ cycloaddition.
+    \item Singlet carbenes add to alkenes in a concerted and stereospecific fashion.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.27\linewidth]{carbRxnChelo.JPG}
+        \caption{Carbene reactions: Chelotropic $[2+1]$ cycloaddition.}
+        \label{fig:carbRxnChelo}
+    \end{figure}
+    \begin{itemize}
+        \item Example (Figure \ref{fig:carbRxnChelo}): Dichlorocarbene and 2-butene react to form a 100\% \emph{cis}-product.
+        \item This is a chelotropiccycloaddition! Recall that we discussed carbene addition in Lecture 5.
+    \end{itemize}
+    \item FMO analysis of this reaction.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{carbCheloOrbitalsa.JPG}
+            \caption{Electrophilic carbenes.}
+            \label{fig:carbCheloOrbitalsa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.71\linewidth]{carbCheloOrbitalsb.JPG}
+            \caption{Nucleophilic carbenes.}
+            \label{fig:carbCheloOrbitalsb}
+        \end{subfigure}
+        \caption{The orbitals behind chelotropic carbene cycloadditions.}
+        \label{fig:carbCheloOrbitals}
+    \end{figure}
+    \begin{itemize}
+        \item Electrophilic carbenes have low-energy orbitals, so their LUMO engages the alkene's $\pi$-HOMO.
+        \item Nucleophilic carbenes have high-energy orbitals, so their HOMO engages the alkene's $\pi^*$-LUMO.
+    \end{itemize}
+    \item Triplet carbenes also add to alkenes, but in a stepwise and non-stereospecific fashion.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.5\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{carbRxnStep21a.JPG}
+            \caption{General form.}
+            \label{fig:carbRxnStep21a}
+        \end{subfigure}\\[1.5em]
+        \begin{subfigure}[b]{0.75\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{carbRxnStep21b.JPG}
+            \caption{Mechanism.}
+            \label{fig:carbRxnStep21b}
+        \end{subfigure}
+        \caption{Carbene reactions: Stepwise $[2+1]$ cycloaddition.}
+        \label{fig:carbRxnStep21}
+    \end{figure}
+    \begin{itemize}
+        \item Because the mechanism has changed, this $[2+1]$ reaction is no longer chelotropic nor pericyclic.
+        \item The rough product distribution is usually about 30\% \emph{cis} and 70\% \emph{trans} (Figure \ref{fig:carbRxnStep21a}).
+        \item Let's investigate the mechanism (Figure \ref{fig:carbRxnStep21b}).
+        \begin{itemize}
+            \item We begin with two unpaired electrons on the carbene (which have the same spin) and two paired electrons in the $\pi$-HOMO of the alkene (which, naturally, have opposing spins).
+            \item One of the carbene electrons will react with the alkene electron having specifically the \emph{opposite} spin.
+            \begin{itemize}
+                \item Postulate: Only radicals with paired spins can react.
+            \end{itemize}
+            \item After the first step, two radicals remain (one from the olefin and one from the carbene).
+            \item Since they both have the same spin, though, we will need \textbf{ISC} to the singlet state before we can proceed.
+            \item Following ISC, the remaining radicals can react to form a second bond.
+            \item Alternatively, since ISC takes a bit of time, we can have a bond rotation followed by an ISC, followed by bond formation.
+        \end{itemize}
+        \item Takeaway: The \emph{cis}-to-\emph{trans} ratio depends on the relative rates of the bond rotation vs. ISC.
+        \item Hint for the mechanistic proposal!!
+        \begin{itemize}
+            \item Suppose you're proposing a mechanistic study of a triplet carbene.
+            \item We can learn from orthogonal experiments how long a bond rotation takes.
+            \item Thus, the \emph{cis}-to-\emph{trans} ratio can be a good probe for our triplet lifetime!
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Intersystem crossing}: A spin flip. \emph{Also known as} \textbf{ISC}.
+    \begin{itemize}
+        \item We will learn more about this later in the semester!
+    \end{itemize}
+    \item Steven: Are ISC and pairing always separate, or can they ever happen together?
+    \begin{itemize}
+        \item Pairing involves moving electrons into different orbitals, and spin flipping is just spin flipping; essentially, they're two different kinds of processes, and this is why we draw them separately.
+        \item You can't pair electrons unless they're spin-flipped (except perhaps in some niche application).
+    \end{itemize}
+    \item We'll now talk about carbenes' reactivity toward insertions.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.39\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{carbRxnInserta.JPG}
+            \caption{Concerted (singlet carbenes).}
+            \label{fig:carbRxnInserta}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.58\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{carbRxnInsertb.JPG}
+            \caption{Stepwise (triplet carbenes).}
+            \label{fig:carbRxnInsertb}
+        \end{subfigure}
+        \caption{Carbene reactions: Insertions.}
+        \label{fig:carbRxnInsert}
+    \end{figure}
+    \begin{itemize}
+        \item These are reactions with \ce{C-H} bonds.
+        \item Singlet carbenes reacted through concerted mechanisms, and triplet carbenes react through stepwise mechanisms.
+        \begin{itemize}
+            \item This means that only singlet carbenes engage in a \emph{true} insertion into the \ce{C-H} bond.
+            \item Triplet carbenes, on the other hand, have an \ce{H}-atom transfer (HAT) followed by radical recombination.
+        \end{itemize}
+        \item Aside: HAT refers to hydrogen (\ce{H*}) transfer.
+        \begin{itemize}
+            \item It is distinct from proton (\ce{H+}) transfer and hydride (\ce{H-}) transfer.
+            \item Know which one you're talking about!
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Moving on from insertions, let's talk about ring expansions.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{carbRxnRingExpanda.JPG}
+            \caption{Expanding benzene.}
+            \label{fig:carbRxnRingExpanda}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.75\linewidth]{carbRxnRingExpandb.JPG}
+            \caption{Expanding pyrrole.}
+            \label{fig:carbRxnRingExpandb}
+        \end{subfigure}
+        \caption{Carbene reactions: Ring expansions.}
+        \label{fig:carbRxnRingExpand}
+    \end{figure}
+    \begin{itemize}
+        \item Benzene as a starting material (Figure \ref{fig:carbRxnRingExpanda}).
+        \begin{itemize}
+            \item This reaction involves addition to an olefin followed by a $6\pi$ electrocyclization.
+            \item Carbenes are so reactive that they can even break aromaticity!
+        \end{itemize}
+        \item Pyrrole as a starting material (Figure \ref{fig:carbRxnRingExpandb}).
+        \begin{itemize}
+            \item This reaction involves the same addition to an olefin as before. However, it is then followed by elimination of a chlorine and proton transfer to afford pyridine.
+            \item This is an example of single-atom editing because it allows us to insert a specific carbon atom into a heterocycle. Single-atom editing is currently blowing up in the literature.
+        \end{itemize}
+        \item Steven: Why do we add to the side double bonds in pyrrole instead of the back one?
+        \begin{itemize}
+            \item It will be obvious if you draw the product of such an addition: Said product will be much more charge separated.
+            \begin{itemize}
+                \item Specifically, if we're going to engage the back $\pi$-bond, we have to do so from the resonance structure with a carbanion on one carbon and a positive charge on the nitrogen.
+            \end{itemize}
+            \item Takeaway: The side bonds in pyrrole tend to react more as separate $\pi$-systems.
+            \begin{itemize}
+                \item This is because the aromatic stabilization of pyrrole is like \SI[per-mode=symbol]{17}{\kilo\calorie\per\mole}, i.e., pyrrole is much less aromatic than benzene (\SI[per-mode=symbol]{35}{\kilo\calorie\per\mole}).
+                % \item When you get less aromaticity, you tend to react more like isolated $\pi$-systems.
+            \end{itemize}
+            \item Blocking groups might force the second reaction, but it would def give a less stable product.
+            \item The second reaction would give 4-chloropyridine instead of 3-chloropyridine.
+            \begin{itemize}
+                \item We might get a $99:1$ ratio naturally, but if we put an EWG at the 2-position, that could stabilize a resonance form, giving us 2-EWG-4-chloropyridine.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Aside: Learning to draw 7-membered ring.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig[chemfig style={grx}]{*6(------)}
+            \caption{6-membered.}
+            \label{fig:7memberRinga}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{*8(-[,,,,blx]-[,,,,blx]-[,,,,blx](-[2,1.2,,,grx]-[::60,1.4,,,grx]-[::60,1.4,,,grx]-[::60,1.2,,,grx]))}
+            \caption{7-membered.}
+            \label{fig:7memberRingb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig[chemfig style={blx}]{*8(--------)}
+            \caption{8-membered.}
+            \label{fig:7memberRingc}
+        \end{subfigure}
+        \caption{Drawing a 7-membered ring.}
+        \label{fig:7memberRing}
+    \end{figure}
+    \begin{itemize}
+        \item On paper, draw half a hexagon and half an octagon. This is easier to read than the "proper" equidistant form, which we should leave that for ChemDraw.
+    \end{itemize}
+    \item Masha: "Jonathan [the TF] is like the most brilliant person ever, so whenever I find a chink in the armor, it makes me happy."
+    \item Lastly, we'll discuss rearrangements.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.25\linewidth]{carbRxnRearra.JPG}
+            \caption{1,2-hydrogen shift.}
+            \label{fig:carbRxnRearra}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{carbRxnRearrb.JPG}
+            \caption{Wolff rearrangement.}
+            \label{fig:carbRxnRearrb}
+        \end{subfigure}
+        \caption{Carbene reactions: Rearrangements.}
+        \label{fig:carbRxnRearr}
+    \end{figure}
+    \begin{itemize}
+        \item The most common one is a 1,2-hydrogen shift (Figure \ref{fig:carbRxnRearra}).
+        \item Then there are a ton of named reactions, e.g., the \textbf{Wolff}, \textbf{Curtius}, and \textbf{Hoffmann rearrangements}.
+        \begin{itemize}
+            \item We'll never run these reactions in our lives, but they teach them all the same regardless\dots perhaps because they're mechanistically interesting.
+        \end{itemize}
+        \item Example named rearrangement: The Wolff rearrangement (Figure \ref{fig:carbRxnRearrb}).
+        \begin{itemize}
+            \item Either light or heat can be used to cleave the diazo functional group to a carbene.
+            \item Then we get a rearrangement into a ketene.
+            \item Then a nucleophile attacks the ketene's central carbon (the electrophilic one) to give a ketone.
+            \item This rearrangement is useful for lots of things, e.g., a 5.47 problem!
+        \end{itemize}
+    \end{itemize}
+    \item Angle of approach.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.21\linewidth}
+            \centering
+            \includegraphics[width=0.5\linewidth]{carbAngleAppa.JPG}
+            \caption{Linear approach.}
+            \label{fig:carbAngleAppa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.21\linewidth}
+            \centering
+            \includegraphics[width=0.5\linewidth]{carbAngleAppb.JPG}
+            \caption{Nonlinear approach.}
+            \label{fig:carbAngleAppb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{carbAngleAppc.JPG}
+            \caption{Phasing wrong.}
+            \label{fig:carbAngleAppc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{carbAngleAppd.JPG}
+            \caption{Phasing wrong.}
+            \label{fig:carbAngleAppd}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{carbAngleAppe.JPG}
+            \caption{Phasing correct.}
+            \label{fig:carbAngleAppe}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{carbAngleAppf.JPG}
+            \caption{Phasing correct.}
+            \label{fig:carbAngleAppf}
+        \end{subfigure}
+        \caption{Angle of approach in chelotropic $[2+1]$ cycloadditions.}
+        \label{fig:carbAngleApp}
+    \end{figure}
+    \begin{itemize}
+        \item Consider a $[2+1]$ with an alkene.
+        \item The mechanism is actually side-to-side per MO theory (Figure \ref{fig:carbAngleAppb}), not linear and head on as we often draw (Figure \ref{fig:carbAngleAppa}).
+        \item Linear approach.
+        \begin{itemize}
+            \item The alkene and carbene can both be HOMO/LUMO.
+            \item First, let the alkene be the HOMO and the carbene the LUMO (Figure \ref{fig:carbAngleAppc}).
+            \begin{itemize}
+                \item The phasing is all wrong, because we've got a shaded lobe mixing with an unshaded lobe.
+            \end{itemize}
+            \pagebreak
+            \item Now consider the alkene LUMO and the carbene HOMO (Figure \ref{fig:carbAngleAppd}).
+            \begin{itemize}
+                \item Here, the phasing is still all wrong, because we're interacting a single carbene lobe with two different shaded $\pi^*$-lobes.
+            \end{itemize}
+            \item So the phasing is wrong in both cases.
+        \end{itemize}
+        \item Nonlinear approach.
+        \begin{itemize}
+            \item Alkene HOMO and carbene LUMO (Figure \ref{fig:carbAngleAppe}).
+            \begin{itemize}
+                \item Good phasing match.
+            \end{itemize}
+            \item Alkene LUMO and carbene HOMO (Figure \ref{fig:carbAngleAppf}).
+            \begin{itemize}
+                \item Good phasing match as well!
+            \end{itemize}
+        \end{itemize}
+        \item Conclusion: Nonlinear approach is required!
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
