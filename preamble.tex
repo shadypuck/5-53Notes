@@ -5,7 +5,7 @@
 \usepackage{enumitem}
 \usepackage{scrextend}
 \usepackage[bottom]{footmisc}
-\usepackage{siunitx}
+\usepackage{siunitx,xparse}
 \usepackage[style=apa]{biblatex}
 \usepackage{xr}
 \usepackage{tikz,graphicx}
@@ -43,15 +43,19 @@
 
 \sisetup{range-phrase=-,range-units=single}
 \AtBeginDocument{\RenewCommandCopy\qty\SI}
+\NewDocumentCommand\angrange{O{} m m}{\SIrange[parse-numbers=false, #1]{\ang[parse-numbers=true]{#2}}{\ang[parse-numbers=true]{#3}}{}}
 \DeclareSIUnit{\calorie}{cal}
+\DeclareSIUnit{\debye}{D}
+\DeclareSIUnit{\revolutionsperminute}{rpm}
 
 \addbibresource{\subfix{../main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
 
-\usetikzlibrary{bending,calc}
+\usetikzlibrary{bending,calc,decorations.pathmorphing}
 \tikzset{
     curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2},
-    ovbnd/.style={white,very thick,double=black,double distance=0.4pt}
+    ovbnd/.style={white,very thick,double=black,double distance=0.4pt},
+    wv/.style={decorate,decoration={coil,aspect=0,amplitude=1pt,segment length=4.7pt}}
 }
 \colorlet{grx}{green!50!black}
 \colorlet{orx}{orange!90!yellow!95!black!90}
@@ -71,11 +75,13 @@
     \CF_arrowdisplaylabel{#1}{0.5}+\CF_arrowstartnode{#2}{0.5}-\CF_arrowendnode
 }
 \catcode`\_=8
+\definesubmol{wave}{-[::180,0.2,,,opacity=0]-[::90,0.5,,,opacity=0]-[::180,,,,wv]}
 
 \newcommand{\e}[1][]{\textup{e}^{#1}}
 \newcommand{\cnc}[1]{[\ce{#1}]}
 \newcommand{\pKa}{\textup{p}K_\textup{a}}
 \newcommand{\Ka}{K_\textup{a}}
+\newcommand{\pH}{\textup{pH}}
 \newcommand{\rc}{
     {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize $+$};}}
 }
@@ -87,4 +93,5 @@
 }
 \newcommand{\Keq}{K_\textup{eq}}
 \newcommand{\kcal}[1]{\SI[per-mode=symbol]{#1}{\kilo\calorie\per\mole}}
+\newcommand{\kcalr}[2]{\SIrange[per-mode=symbol]{#1}{#2}{\kilo\calorie\per\mole}}
 \newcommand{\krel}{k_\textup{rel}}
