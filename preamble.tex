@@ -47,6 +47,7 @@
 \DeclareSIUnit{\calorie}{cal}
 \DeclareSIUnit{\debye}{D}
 \DeclareSIUnit{\revolutionsperminute}{rpm}
+\DeclareSIUnit{\entropyunit}{e.u.}
 
 \addbibresource{\subfix{../main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
@@ -94,4 +95,5 @@
 \newcommand{\Keq}{K_\textup{eq}}
 \newcommand{\kcal}[1]{\SI[per-mode=symbol]{#1}{\kilo\calorie\per\mole}}
 \newcommand{\kcalr}[2]{\SIrange[per-mode=symbol]{#1}{#2}{\kilo\calorie\per\mole}}
+\newcommand{\eu}[1]{\SI{#1}{\entropyunit}}
 \newcommand{\krel}{k_\textup{rel}}
