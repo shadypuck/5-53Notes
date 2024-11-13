@@ -48,6 +48,8 @@
 \DeclareSIUnit{\debye}{D}
 \DeclareSIUnit{\revolutionsperminute}{rpm}
 \DeclareSIUnit{\entropyunit}{e.u.}
+\DeclareSIUnit{\molar}{M}
+\DeclareSIUnit{\year}{y}
 
 \addbibresource{\subfix{../main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
@@ -79,7 +81,7 @@
 \definesubmol{wave}{-[::180,0.2,,,opacity=0]-[::90,0.5,,,opacity=0]-[::180,,,,wv]}
 
 \newcommand{\e}[1][]{\textup{e}^{#1}}
-\newcommand{\cnc}[1]{[\ce{#1}]}
+\newcommand{\cnc}[2][]{[\ce{#2}]_\text{#1}}
 \newcommand{\pKa}{\textup{p}K_\textup{a}}
 \newcommand{\Ka}{K_\textup{a}}
 \newcommand{\pH}{\textup{pH}}
@@ -97,3 +99,4 @@
 \newcommand{\kcalr}[2]{\SIrange[per-mode=symbol]{#1}{#2}{\kilo\calorie\per\mole}}
 \newcommand{\eu}[1]{\SI{#1}{\entropyunit}}
 \newcommand{\krel}{k_\textup{rel}}
+\newcommand{\kB}{k_\textup{B}}
