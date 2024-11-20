@@ -188,7 +188,7 @@
         \item So at the energy minimum, there is residual energy latent in the system called \textbf{zero-point energy}.
         \item So even in the lowest wave function, there's gonna be some spread of the nuclear position beyond the potential well.
     \end{itemize}
-    \item \textbf{Zero-point energy}. \emph{Also known as} \textbf{ZPE}.
+    \item \textbf{Zero-point energy}. \emph{Also known as} \textbf{ZPE}, $\bm{E_0}$.
     \item Quantized vibrational energies.
     \begin{table}[h!]
         \centering
@@ -374,6 +374,488 @@
     \end{itemize}
     \item We can also have \textbf{secondary} KIEs, where we label a position potentially far from the reactive site.
     \item Next time: Using KIEs to diagnose reaction mechanisms, single isotopologues under different reaction conditions give us different information, etc. Takeaways: KIEs are super useful.
+\end{itemize}
+
+
+
+\section{Kinetic Isotope Effects}
+\begin{itemize}
+    \item \marginnote{11/7:}Lecture 17 recap.
+    \begin{itemize}
+        \item Potential energy surfaces remain unperturbed when switching between isotopologues because the potentials are defined by the electrostatic charge densities of the relevant nuclei.
+        \begin{itemize}
+            \item However, the energetic position within the well of the vibrational wave functions varies with the reduced mass.
+        \end{itemize}
+        \item \ce{C-H/D} isotope effects lead to six- or sevenfold selectivity differences.
+    \end{itemize}
+    \item A note on the thermodynamic population of various energy levels.
+    \begin{itemize}
+        \item Almost all molecules reside at the zero-point energy $E_0$, so only considering $\Delta G$'s and $\Delta G^\ddagger$'s between zero-point energies \emph{is} a good approximation.
+    \end{itemize}
+    \item Today: Finalizing some of the descriptive aspects of isotope effects, especially in the transition state structure.
+    \item Consider an atom-transfer reaction, like in Figure \ref{fig:KIE}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.45\linewidth]{ATPES.JPG}
+        \caption{Atom-transfer potential energy surface.}
+        \label{fig:ATPES}
+    \end{figure}
+    \begin{itemize}
+        \item We may think of either an acid-base deprotonation or an HAT; it really doesn't matter.
+        \item The ensemble $[\ce{A***H***B}]^\ddagger$ is the transition structure.
+        \begin{itemize}
+            \item It lives at a saddle point, so all of its vibrational modes live in the orthogonal potentials.
+        \end{itemize}
+        \item Since the TS is triatomic and linear, it has $3N-5=4$ vibrational modes.
+        \begin{itemize}
+            \item More specifically, it has 3 different \emph{kinds} of vibrational modes, since the bending mode can happen in two orthogonal directions.
+        \end{itemize}
+    \end{itemize}
+    \item In the parlance of vibrational spectroscopy, the molecular motion in the transition state is the extreme of the \textbf{asymmetric stretch}.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.5\linewidth]{ATviba.JPG}
+            \caption{Asymmetric stretch.}
+            \label{fig:ATviba}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{ATvibb.JPG}
+            \caption{Symmetric bend.}
+            \label{fig:ATvibb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \includegraphics[width=0.65\linewidth]{ATvibc.JPG}
+            \caption{Symmetric stretch.}
+            \label{fig:ATvibc}
+        \end{subfigure}
+        \caption{Atom-transfer vibrational modes.}
+        \label{fig:ATvib}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item This asymmetric stretch corresponds to the reaction coordinate.
+        \begin{itemize}
+            \item This is the vibrational mode along which we're minimizing.
+            \item No vibrational value that we assign to this mode.
+            \begin{itemize}
+                \item Downwards concavity at this point means all frequencies are imaginary.
+                \item If you use DFT to compute force constants in the TS (which we always should), it will tell us that the force constants are imaginary.
+            \end{itemize}
+        \end{itemize}
+        \item The other modes include the \textbf{symmetric bending mode}.
+        \begin{itemize}
+            \item This does modify the KIE. It contributes, but it a minor way that we'll discuss later.
+        \end{itemize}
+        \item Then there's the \textbf{symmetric stretch}.
+        \begin{itemize}
+            \item This mode most dramatically affects KIEs; in fact, it is the primary determinant of the KIE because it is the stretch affected when you switch isotopes.
+        \end{itemize}
+    \end{itemize}
+    \item If the \ce{H} or \ce{D} atom is completely stationary in the TS, the isotopic sensitivity of the transition state goes to zero! Here are the conditions under which this happens.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[
+            every node/.style=black
+        ]
+            \small
+            \node at (0,4) {$[\ce{A***H/D***B}]^\ddagger$};
+    
+            \draw [gry,thick,name path=PESo] (-1.5,3.6)
+                to[out=-30,in=180] (0,3.2)
+                to[out=0,in=-150] (1.5,3.6)
+            ;
+            \draw [grx,thick,name path=PES] (-3.3,1.5)
+                to[out=-70,in=180,in looseness=0.7] (-2.5,0.8)
+                to[out=0,in=180,out looseness=0.7] (0,3.2)
+                to[out=0,in=180,in looseness=0.7] (2.5,0.8)
+                to[out=0,in=-110,out looseness=0.7] (3.3,1.5)
+            ;
+    
+            \path [name path=CH] (-3.5,1.3) -- ++(2,0);
+            \draw [grx,name intersections={of=PES and CH}] (intersection-1) -- (intersection-2);
+            \path [name path=CD] (-3.5,1.0) -- ++(2,0);
+            \draw [grx,name intersections={of=PES and CD}] (intersection-1) -- (intersection-2);
+    
+            \path [name path=CH] (1.5,1.3) -- ++(2,0);
+            % \draw [grx,name intersections={of=PES and CH}] (intersection-1) -- (intersection-2);
+            \path [name path=CD] (1.5,1.0) -- ++(2,0);
+            % \draw [grx,name intersections={of=PES and CD}] (intersection-1) -- (intersection-2);
+    
+            \path [name path=C] (-1.5,3.3) -- ++(3,0);
+            \draw [gry,name intersections={of=PESo and C}] (intersection-1) -- (intersection-2);
+        \end{tikzpicture}
+        \caption{Thermoneutral kinetic isotope effects.}
+        \label{fig:KIEtherm}
+    \end{figure}
+    \begin{itemize}
+        \item The reaction has to be thermoneutral.
+        \item \ce{A} and \ce{B} need to be identical (or at least have the same mass).
+        \begin{itemize}
+            \item A thermoneutral HAT between atoms of very different masses gives some interesting KIEs.
+            \item This would be very devious to put on the exam!!
+        \end{itemize}
+        \item With zero difference in zero-point energy between \ce{A-H} and \ce{A-D} in the transition state but still a good difference in the starting materials, it follows that $\Delta\Delta G^\ddagger$ should be fairly large.
+        \begin{itemize}
+            \item Hence the kinetic isotope effect is pretty large in this regime.
+        \end{itemize}
+    \end{itemize}
+    \item What about when the TST is asymmetric?
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{KIEasya.JPG}
+            \caption{Exergonic.}
+            \label{fig:KIEasya}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{KIEasyb.JPG}
+            \caption{Endergonic.}
+            \label{fig:KIEasyb}
+        \end{subfigure}
+        \caption{Thermodynamically asymmetric kinetic isotope effects.}
+        \label{fig:KIEasy}
+    \end{figure}
+    \begin{itemize}
+        \item Consider an exergonic reaction (Figure \ref{fig:KIEasya}).
+        \begin{itemize}
+            \item Per the Hammond postulate, the transition state will resemble the starting materials.
+            \item Thus, the difference in energy $\Delta E$ between the \ce{A-H} and \ce{A-D} transition states should be quite similar to the respective $\Delta E$ in the starting materials.
+            \item Hence, $\Delta\Delta G^\ddagger$ smaller, so the KIEs are less than maximal.
+        \end{itemize}
+        \item Consider an endergonic reaction (Figure \ref{fig:KIEasyb}).
+        \begin{itemize}
+            \item Per the Hammond postulate, the transition state will resemble the products
+            \item Thus, $\Delta E$ will be nonzero (as it is in the products).
+            \item Hence, $\Delta\Delta G^\ddagger$ is once again smaller than its thermoneutral maximum, so the KIEs are correspondingly smaller than maximum.
+        \end{itemize}
+        \item Takeaway: Kinetic isotope effects can give us a window in the precise atomic composition and orientation of the transition structure.
+    \end{itemize}
+    \item We can measure the extent to which the magnitude of a kinetic isotope effect varies with thermodynamic asymmetry.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{KIEasyVary.JPG}
+        \caption{Variation in kinetic isotope effects with thermodynamic asymmetry.}
+        \label{fig:KIEasyVary}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the following acid-base deprotonation.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{Me-[:30](-[:110]D/H)(-[:70]H@{}/D)-[:-30]NO_2}
+                \arrow{0}[,0.1]\+
+                \chemfig{R-NH_2}
+                \arrow
+                \chemfig{Me-[:30]\charge{[extra sep=5pt]90=$\ominus$}{}-[:-30]NO_2}
+                \arrow{0}[,0.1]\+
+                \chemfig{R-\charge{[extra sep=5pt]90=$\oplus$}{N}H_3}
+            \schemestop
+        \end{center}
+        \begin{itemize}
+            \item $\pKa\approx 9$ for a nitroalkane.
+            \item For nitroethane, specifically, $\pKa=8.5$.
+        \end{itemize}
+        \item We then vary \ce{R} to change the $\pKa$ of the conjugate acid of our amine base.
+        \begin{itemize}
+            \item Our dependent variable is the relative rates $k_{\ce{H}}/k_{\ce{D}}$ of deprotonation of the isotopologues.
+        \end{itemize}
+        \item The result is a plot with a peak (greatest KIE) at $\pKa\approx 9$.
+        \item Takeaway: This experimentally confirms that when we tune into a thermoneutral reaction, we get higher KIEs.
+        \item Reference: \textcite{bib:KIEasyVary}.
+    \end{itemize}
+    \item What happens in a nonlinear transition-state structure?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.45\linewidth]{nonlinearTS.JPG}
+        \caption{Nonlinear transition state.}
+        \label{fig:nonlinearTS}
+    \end{figure}
+    \begin{itemize}
+        \item We get increasing contributions from the isotopically sensitive bending modes!
+        \item This tends to decrease the $\Delta\Delta G^\ddagger$ from the ground state to the transition structure.
+        \item This means that $1^\circ$ KIEs can be much smaller.
+        \begin{itemize}
+            \item Typical range: \numrange{1.5}{3.5}.
+        \end{itemize}
+        \item Implication: A typical \ce{C-H} stretching mode --- via \ce{R3C-H <=> R_3C***H} --- has $\nu\approx\SI{2900}{\per\centi\meter}$, whereas a typical \ce{C-H} wagging mode --- via \ce{R3C-H <=> R3C-H\,$\updownarrow$} --- has $\nu\approx\SI{1350}{\per\centi\meter}$.
+    \end{itemize}
+    \item Aside: A reaction that has an anomalous KIE as a result of quantum tunnelling.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.3\linewidth]{HATintra.JPG}
+        \caption{Intramolecular HAT can proceed through (rather than over) potential barriers.}
+        \label{fig:HATintra}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the following intramolecular HAT within the tri-\emph{t}-butylphenyl radical.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{*6(-(-{{}^{\emph{t}}Bu})=-(-(<[:-70]Me)(<:[:-30]Me)-[2]-[:150]H/D)=\charge{90=\.}{}-(-{}^{\emph{t}}Bu)=)}
+                \arrow
+                \chemfig{*6(-(-{{}^{\emph{t}}Bu})=-(-(<[:-70]Me)(<:[:-30]Me)-[2]\charge{90=\.}{})=(-{H/D})-(-{}^{\emph{t}}Bu)=)}
+            \schemestop
+        \end{center}
+        \begin{itemize}
+            \item One of the methyl groups is perdeuterated to \ce{CD3}.
+        \end{itemize}
+        \item Here, $k_{\ce{H}}/k_{\ce{D}}\approx 13000$. Why such a big effect?
+        \item The only thing that moves along the reaction coordinate is the proton or deuteron.
+        \begin{itemize}
+            \item However, it does not have to move \emph{over} the potential barrier here; rather, it can quantum tunnel through it!
+            \item This is because per Figure \ref{fig:HATintra}, we get a spread of the vibrational wavefunctions (as we discussed in Figure \ref{fig:quantumOsc}). Thus, the hydrogen can migrate along the reaction coordinate \emph{through} the potential barrier by just decreasing its wave function on one side and increasing it on the other!
+            \item Therefore, TST is not applicable here because the first assumption of TST (establishment of a quasi-equilibrium between the SMs and TST) is not met.
+        \end{itemize}
+        \item Reference: \textcite{bib:HATintra}.
+    \end{itemize}
+    \item These tunnelling reactions are not all that rare.
+    \item Here's some new evidence that a reaction has its product selectivity determined by quantum tunnelling.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{tunnelSelect.JPG}
+        \caption{Quantum tunnelling can influence product selectivity.}
+        \label{fig:tunnelSelect}
+    \end{figure}
+    \begin{itemize}
+        \item The reactant is methylhydroxycarbene.
+        \begin{itemize}
+            \item The adjacent $\pi$-donor makes this carbene a ground-state triplet.
+        \end{itemize}
+        \item This carbene becomes either acetaldehyde or vinyl alcohol.
+        \begin{itemize}
+            \item The competing mechanisms are \ce{O-H} and \ce{C-H} migration to the carbene center.
+            \item The driving force for formation of vinyl alcohol is $-\kcal{39.8}$.
+            \begin{itemize}
+                \item The transition state stability for this migration is $+\kcal{22.6}$.
+            \end{itemize}
+            \item The driving force for formation of acetaldehyde is $-\kcal{50.7}$.
+            \begin{itemize}
+                \item The transition state stability for this migration is $+\kcal{28}$.
+            \end{itemize}
+        \end{itemize}
+        \item Per transition state theory, \kcal{5} should lead to a \emph{devastating} selectivity for vinyl alcohol.
+        \begin{itemize}
+            \item Experimentally, however, we observe \emph{exclusive} formation of acetaldehyde.
+            \item Note that this reaction is carried out molecule-by-molecule in a matrix at \SI{11}{\kelvin}; i.e., the system is very cold, and every methylhydroxycarbene molecule is isolated from every other and hence allowed to react independently.
+        \end{itemize}
+        \item Additionally, $t_{1/2}(\ce{H},\ \SI{11}{\kelvin})\approx\SI{1}{\hour}$ and $t_{1/2}(\ce{D},\ \SI{11}{\kelvin})\to\infty$.
+        \item Therefore, the mechanism must be quantum tunnelling.
+        \item Reference: \textcite{bib:tunnelSelect}.
+    \end{itemize}
+    \item David: Why would we not get competitive keto-enol tautomerization?
+    \begin{itemize}
+        \item At \SI{11}{\kelvin}, there's not enough energy for keto-enol tautomerization (even though there is a thermodynamic driving force).
+        \item Additionally, keto-enol tautomerization is an intermolecular process, and everything is site isolated in the matrix.
+        \item Recall that we don't see uncatalyzed keto-enol tautomerization because it's Woodward-Hoffmann forbidden (see Figure \ref{fig:supraAntarab}). 
+        \item This is a good question, because this experiment does rely on zero tautomerization.
+    \end{itemize}
+    \item Kwanwoo: Temperature dependence of these quantum mechanical effects?
+    \begin{itemize}
+        \item Quantum tunelling is temperature independent in ways that transition state theory isn't.
+    \end{itemize}
+    \item A related constellation of isotope effects without primary-ness: Secondary ($2^\circ$) isotope effects.
+    \item Let's establish the basics through an example.
+    \begin{itemize}
+        \item Consider the solvolysis of isopropyl bromide via an S\textsubscript{N}1-like mechanism.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{Me-[:30](-[:110]Br)(-[:70]H@{}/D)-[:-30]Me}
+                \arrow{->[$k_\text{solv}$]}
+                \chemfig{Me-[:30]\charge{[extra sep=4pt]30=$\oplus$}{}(-[2]{H/D})-[:-30]Me}
+                \arrow{-->}
+            \schemestop
+        \end{center}
+        \item We assume that $k_\text{solv}$ is the RDS, and everything else is fast.
+        \item Recall that $\nu_{\ce{C-H}}\approx\SI{2900}{\per\centi\meter}$.
+        \begin{itemize}
+            \item In the cation, it's not all that different: $\nu_{\ce{C+-H}}\approx\SI{2800}{\per\centi\meter}$.
+        \end{itemize}
+        \item The scissoring bend mode --- which brings the proton or deuteron closer to one methyl group or the other --- is approximately \SI{1340}{\per\centi\meter}.
+        \begin{itemize}
+            \item In the cation, it's also not all that different: \SI{1350}{\per\centi\meter}.
+        \end{itemize}
+        \item However, the out-of-plane bending mode changes quite a bit: \SI{1340}{\per\centi\meter} to \SI{800}{\per\centi\meter}.
+        \item This is the Andy Streitwieser analysis of secondary KIEs: The out of plane bending modes are dominant.
+    \end{itemize}
+    \item Example: A normal $\alpha$-secondary kinetic isotope effect.
+    \begin{itemize}
+        \item Consider the solvolysis of a benzyl chloride derivative.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{Me-[:30]*6(-=-(-(-[:110]D/H)(-[:70]H@{}/D)-[:-30]Cl)=-=)}
+                \arrow{->[\ce{H2O}][\ce{EtOAc}]}
+                \chemfig{Me-[:30]*6(-=-(-(-[:110]D/H)(-[:70]H@{}/D)-[:-30]OH)=-=)}
+            \schemestop
+        \end{center}
+        \item Isotopically label the two hydrogens on the active-site carbon.
+        \item Through kinetic analysis,\footnote{"We'll get into this in a few lectures" --- is this not just Hammett plots??} we can confirm an S\textsubscript{N}1 mechanism.
+        \item Experimentally, we observe that the $\alpha$-$2^\circ$ KIE has $k_{\ce{H}}/k_{\ce{D}}=1.30$.
+        \item Let's justify this number.
+        \begin{itemize}
+            \item The $sp^3$-like starting material goes through an $sp^2$-like transition state.
+            \item This means that we're going to a more slack potential, where the out-of-plane bending can happen more freely.
+            \item Thus, the \ce{H}/\ce{D} spacing will be tighter in the TS than the ground state, explaining our \emph{normal} KIE (as opposed to an \emph{inverse} KIE).
+            \item The number will have a smaller magnitude, however, because it is a secondary effect stabilizing and destabilizing our species, not an atom directly involved in the process.
+        \end{itemize}
+    \end{itemize}
+    \item Example: An inverse $\alpha$-secondary kinetic isotope effect.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[
+            every node/.style=black
+        ]
+            \draw [gry,thick,name path=PESo] (-0.6,3.7)
+                to[out=-70,in=180] (0,3.2)
+                to[out=0,in=-110] (0.6,3.7)
+            ;
+            \draw [grx,thick,name path=PES] (-4.5,1.5)
+                to[out=-70,in=180,in looseness=0.7] (-3.5,0.8)
+                to[out=0,in=180,out looseness=0.7] (0,3.2)
+            ;
+    
+            \path [name path=CH] (-5,1.0) -- ++(3,0);
+            \draw [grx,name intersections={of=PES and CH}] (intersection-1) -- (intersection-2);
+            \path [name path=CD] (-5,0.9) -- ++(3,0);
+            \draw [grx,name intersections={of=PES and CD}] (intersection-1) -- (intersection-2);
+    
+            \path [name path=C] (-1.5,3.4) -- ++(3,0);
+            \draw [gry,name intersections={of=PESo and C}] (intersection-1) -- (intersection-2);
+            \path [name path=C] (-1.5,3.6) -- ++(3,0);
+            \draw [gry,name intersections={of=PESo and C}] (intersection-1) -- (intersection-2);
+        \end{tikzpicture}
+        \caption{Inverse $\alpha$-secondary kinetic isotope effect.}
+        \label{fig:KIEinvAlph2}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the reaction of anisaldehyde to the corresponding cyanohydrin.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{MeO-[:30]*6(-=-(-(=[2]O)-[:-30]H/D)=-=)}
+                \arrow{->[\ce{HCN}]}
+                \chemfig{Me-[:30]*6(-=-(-(-[2]OH)(<[:-70]CN)<:[:-30]H/D)=-=)}
+            \schemestop
+        \end{center}
+        \item Isotopically label the aldehyde \ce{H}/\ce{D}.
+        \item Burgi-Dunitz trajectory to tetrahedral intermediate, which will be thermodynamically uphill.
+        \item Here, we have an $sp^2$ SM going to an $sp^3$ TS.
+        \item More steric bulk in TS leads to more energetic penalty to wagging, leads to tighter well at the top near the TST.
+        \item So we're going from a well with small differences in ZPE to a well with big ZPE differences.
+        \item This penalizes access to the TST with hydrogen, giving us an inverse KIE of 0.7.
+    \end{itemize}
+    \pagebreak
+    \item We now move onto $\beta$-secondary KIEs.
+    \item Example: Labeling $\beta$ to the "active site."
+    \begin{itemize}
+        \item Consider the base-mediated elimination (E\textsubscript{2} dehydrohalogenation) of 1-propylbromide.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{Me-[:30](-[:110]D/H)(-[:70]H@{}/D)-[:-30]-[:30]Br}
+                \arrow{->[\ce{NaOEt}][\ce{EtOH}]}[,1.2]
+                \chemfig{Me-[:30](-[2]{H/D})=_[:-30]}
+            \schemestop
+        \end{center}
+        \item We label $\beta$ to the bromide.
+        \item Displacement of the bromide is concommittant with \ce{C-H} cleavage at the $\beta$-position, so we should see a large KIE.
+        \begin{itemize}
+            \item Indeed we do: $k_{\ce{H}}/k_{\ce{D}}=6.7$.
+        \end{itemize}
+        \item So frankly, this is a $1^\circ$ KIE.
+    \end{itemize}
+    \item Example: A real normal $\beta$-secondary kinetic isotope effect.
+    \begin{itemize}
+        \item Consider the E\textsubscript{1} dehydrohalogenation of 1-propylbromide.
+        \begin{center}
+            \footnotesize
+            \schemestart
+                \chemfig{Me-[:30](-[:110]D/H)(-[:70]H@{}/D)-[:-30]-[:30]Br}
+                \arrow{->[\ce{H2O}][$\Delta$]}[,1.2]
+                \chemfig{Me-[:30](-[2]{H/D})=_[:-30]}
+            \schemestop
+        \end{center}
+        \item Here, rate-limiting loss of \ce{Br} gives a cation intermediate.
+        \begin{itemize}
+            \item There is no change in hybridization at the $\beta$-position.
+            \item However, we do have a donor-acceptor interaction. Indeed, there is symmetry-allowed $\sigma_{\ce{C-H/D}}\to p_{\ce{C}}$ mixing.
+            \item This depopulates the $\beta$-bonding orbital.
+            \item Depopulating this orbital leads to weaker bonds, smaller force constants, and a more slack potential in the transition state.
+            \item So if we're going to a more slack potential, we get normal KIEs.
+        \end{itemize}
+        \item Indeed, $k_{\ce{H}}/k_{\ce{D}}=1.4$.
+        \begin{itemize}
+            \item This kinetic isotope effect is greater than 1 for all the reasons we've talked about.
+            \item However, the \ce{C-H/D} bond is not being cleaved in the transition state, so the magnitude is still relatively small.
+        \end{itemize}
+    \end{itemize}
+    \item Secondary KIEs are usually smaller because they're not at the reactive center.
+    \begin{itemize}
+        \item Secondary KIEs will rarely be bigger than 1.5 or smaller than 0.7.
+    \end{itemize}
+    \item All of this is a prelude to what he actually want's to talk about: This lecture's content, which will mostly become next lecture's content.
+    \item Experimental determination of KIEs.
+    \begin{itemize}
+        \item Nicely summarized in a paper 10-12 years ago by Eric Simmons (now at BMS) and John Hartwig.
+        \item Read this before next time in order to dialogue about what's going on!!
+        \item Reference: \textcite{bib:KIEexpt}.
+    \end{itemize}
+    \pagebreak
+    \item First and least interesting method: Independent absolute rate measurement.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(-=-(-H)=-=)}
+                \arrow{->[$k_{\ce{H},\text{expt}}$]}[,1.2]
+                \chemfig{*6(-=-(-FG)=-=)}
+            \schemestop
+            \caption{Undeuterated.}
+            \label{fig:indepAbsRatea}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(-=-(-D)=-=)}
+                \arrow{->[$k_{\ce{D},\text{expt}}$]}[,1.2]
+                \chemfig{*6(-=-(-FG)=-=)}
+            \schemestop
+            \caption{Deuterated.}
+            \label{fig:indepAbsRateb}
+        \end{subfigure}
+        \caption{Independent absolute rate measurement of kinetic isotope effects.}
+        \label{fig:indepAbsRate}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the functionaliztion of an arene, one sample deuterated and the other not.
+        \item First measure $k_{\ce{H}}$, and then measure $k_{\ce{D}}$. Take the ratio of these independently measured rate constants as your KIE.
+        \item This works and people do this, but a few things make it difficult.
+        \begin{enumerate}
+            \item Absolute (as opposed to relative) determinations of rate constants are prone to error.
+            \begin{itemize}
+                \item You have error associated with the determination of each of each.
+                \item Your KIE is only as good as the accuracy of each independent KIE, so we get propagation of error.
+            \end{itemize}
+            \item Despite our best attempts, there will be small variations in the way these reactions are executed (e.g., different concentrations, different temperatures, etc.), contributing to our error.
+            \item Only reports on reactions when RDS is isotope-sensitive.
+            \begin{itemize}
+                \item Only really useful if the bond with the isotope is sensitive to cleavage in the RDS.
+                \item So good when the initial transition state structure is rate-determining and isotopically sensitive.
+                \item What if the first step is rate-determining, but not isotopically sensitive? In this case, our rate analysis is useless because everything else is post-rate limiting.
+            \end{itemize}
+        \end{enumerate}
+        \item So these are difficult experimentally and "blind" to post-rate limiting steps.
+    \end{itemize}
+    \item Next time: Stuff that allows us to see post-rate limiting transformations.
 \end{itemize}
 
 

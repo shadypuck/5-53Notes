@@ -61,6 +61,7 @@
     wv/.style={decorate,decoration={coil,aspect=0,amplitude=1pt,segment length=4.7pt}}
 }
 \colorlet{grx}{green!50!black}
+\colorlet{gry}{green!50!black!40}
 \colorlet{orx}{orange!90!yellow!95!black!90}
 \colorlet{ory}{orange!90!yellow!95!black!20}
 \colorlet{blx}{blue!90!green!80}
@@ -78,6 +79,12 @@
     \draw[double distance=2pt, -Implies] (\CF_arrowstartnode)--(\CF_arrowendnode);
     \expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode);%
     \CF_arrowdisplaylabel{#1}{0.5}+\CF_arrowstartnode{#2}{0.5}-\CF_arrowendnode
+}
+\definearrow0{-->}{
+    \edef\dis{1mm}
+    \draw [-{Stealth[round,scale=1.1,inset'=0pt 0.55]}] ([xshift=-\dis,yshift=\dis]\CF_arrowstartnode.center) -- ([xshift=-\dis,yshift=\dis]\CF_arrowendnode.center);
+    \draw [-{Stealth[round,scale=1.1,inset'=0pt 0.55]}] ([xshift=\dis,yshift=-\dis]\CF_arrowstartnode.center) -- ([xshift=\dis,yshift=-\dis]\CF_arrowendnode.center);
+    \expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode);
 }
 \catcode`\_=8
 \definesubmol{wave}{-[::180,0.2,,,opacity=0]-[::90,0.5,,,opacity=0]-[::180,,,,wv]}
