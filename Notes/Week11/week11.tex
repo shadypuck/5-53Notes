@@ -355,5 +355,381 @@
 
 
 
+\section{Kinetic Rate Laws}
+\begin{itemize}
+    \item \marginnote{11/14:}Today: Experimental kinetics, rate laws, etc.
+    \begin{itemize}
+        \item This topic will proceed through the next several lectures.
+        \item Today, we'll focus on general background.
+        \item This will probably be review for many people, but it's \emph{important} review and good for general understanding.
+    \end{itemize}
+    \item How can we experimentally determine the rate at which a reaction occurs? By measuring the kinetics.
+    \item The goal of a kinetics experiment is to characterize the mechanism of a given transformation.
+    \begin{itemize}
+        \item Kinetics help us rule out possibilities.
+        \item We can experimentally determine the \textbf{rate law} and see if it fits a proposed arrow-pushing mechanism.
+    \end{itemize}
+    \item We begin with some definitions.
+    \item \textbf{Rate law}: A mathematical expression for the reaction rate, involving a \textbf{rate constant} as well as the concentrations of the involved species scaled by exponents. \emph{General form}
+    \begin{equation*}
+        \rate = k\cnc{A}^x\cnc{B}^y\cnc{C}^z
+    \end{equation*}
+    \begin{itemize}
+        \item Note that the above general form pertains to a reaction \ce{A + B + C -> P}.
+        \item These exponents give us information on the composition of the transition state structure relative to the ground state. Remember that we can't directly observe the activated complex, so we need techniques like this!
+        \item Specifically, the values of the exponents tell us the number of \ce{A}'s, \ce{B}'s, and \ce{C}'s in the transition state structure during the RDS.
+    \end{itemize}
+    \item \textbf{Rate constant}: A proportionality constant that relates the rate of reaction to the concentrations of the starting materials. \emph{Denoted by} $\bm{k}$.
+    \begin{itemize}
+        \item Falls out of our discussion of transition state theory.
+    \end{itemize}
+    \item Example: $\rate=k\cnc{A}^1$.
+    \begin{itemize}
+        \item The number of molecules of \ce{A} in the transition state is the same as in the ground state.
+    \end{itemize}
+    \pagebreak
+    \item Example: $\rate=k\cnc{A}^2$.
+    \begin{itemize}
+        \item There are twice as many \ce{A}'s in the transition state vs. the ground state.
+        \item It is important to note that this is \emph{relative} to the ground state; $x=2$ does \emph{not} necessarily imply that there are specifically two molecules of \ce{A} in the transition state, only that there are twice as many in the ground state.
+        \item This is similar to how we were always referencing ground states in Transition State Theory.
+    \end{itemize}
+    \item We can have \textbf{zeroeth-}, \textbf{first-}, \textbf{second-}, etc. order reactions.
+    \item Example: $\rate=k\cnc{A}\cnc{B}$.
+    \begin{itemize}
+        \item There are an equal number of molecules of \ce{A} and \ce{B} in the transition state.
+        \item This reaction may be said to be "first order in \ce{A}" and "first order in \ce{B}" but "second order overall."
+    \end{itemize}
+    \item \textbf{Rate}: The growth in the concentration of the product(s) as a function of time; equivalently, the decay of the starting material as a function of time.
+    \item \textbf{Half-life}: The time at which $\cnc[$t$]{A}=\cnc[0]{A}/2$.
+    \item Topic I: Simple kinetic rate laws.
+    \item The simplest case is zero-order kinetics.
+    \begin{equation*}
+        \ce{A ->[$k$] P}
+    \end{equation*}
+    \begin{itemize}
+        \item Note that this reaction need not have a single-step mechanism.
+        \item The rate law looks like the following.
+        \begin{equation*}
+            \rate = \dv{\cnc{P}}{t}
+            = -\dv{\cnc{A}}{t}
+            = k
+        \end{equation*}
+        \begin{itemize}
+            \item Specifically, this is a \textbf{differential rate law}.
+            \item The important thing is that the rate is independent of $\cnc{A}$.
+        \end{itemize}
+        \item This case is surprisingly common!
+    \end{itemize}
+    \item We don't typically measure rate directly (though we can with calorimetry; we'll talk about this more later).
+    \begin{itemize}
+        \item More typically, we measure concentrations.
+        \item To relate measured concentrations to rates, we need \textbf{integrated rate laws}.
+    \end{itemize}
+    \item Alex derives the integrated rate law for zeroeth-order kinetics.
+    \begin{align*}
+        -\dv{\cnc{A}}{t} &= k\\
+        \int_{\cnc[0]{A}}^{\cnc[$t$]{A}}\dd\cnc{A} &= \int_0^t -k\dd{t}\\
+        \cnc[$t$]{A}-\cnc[0]{A} &= -kt\\
+        \cnc[$t$]{A} &= -kt+\cnc[0]{A}
+    \end{align*}
+    \begin{itemize}
+        \item This integrated rate law tells us that a plot of $\cnc[$t$]{A}$ vs. time should be linear with slope $-k$.
+        \item Correlated with this would be the increase in $\cnc{P}$ with slope $k$.
+    \end{itemize}
+    \item Equally common is first-order kinetics.
+    \begin{itemize}
+        \item The differential rate law here is
+        \begin{equation*}
+            \rate = k\cnc{A}
+        \end{equation*}
+        \item The integrated rate law may be derived from here.
+        \begin{align*}
+            -\dv{\cnc{A}}{t} &= k\cnc{A}\\
+            \int_{\cnc[0]{A}}^{\cnc[$t$]{A}}\frac{\dd\cnc{A}}{\cnc{A}} &= \int_0^t -k\dd{t}\\
+            \ln(\cnc[$t$]{A})-\ln(\cnc[0]{A}) &= -kt\\
+            \cnc[$t$]{A} &= \cnc[0]{A}\e[-kt]
+        \end{align*}
+        \item This tells us that a plot of $\cnc[$t$]{A}$ vs. time will follow a nonlinear decay, i.e., the rate of reaction will slow down over time as the concentration of \ce{A} is depleted.
+        \begin{itemize}
+            \item We can also linearize this plot by taking $\ln(\cnc[$t$]{A})$ vs. time, and know that the slope will be $-k$ and the $y$-intercept $\ln(\cnc[0]{A})$.
+        \end{itemize}
+    \end{itemize}
+    \item Aside: Many of these linearization methods come from a time when we didn't have computers, so linearization was computationally necessary to extract things like rate constants.
+    \begin{itemize}
+        \item In the computer age --- where manipulating vast datasets is easy --- linearization is antiquated.
+        \item But it still gives us a good intuitive appreciation for trends.
+    \end{itemize}
+    \item The half-life of a first-order reaction is given by
+    \begin{equation*}
+        t_{1/2} = \frac{\ln(2)}{k}
+    \end{equation*}
+    \begin{itemize}
+        \item We can derive this by substituting $\cnc[$t_{1/2}$]{A}=\cnc[0]{A}/2$ into the integrated rate law.
+        \item Importantly, the half-life does not depend on $\cnc{A}$!
+        \begin{itemize}
+            \item On a plot, this means that each time a half-life elapses, the concentration of $\cnc{A}$ has halved.
+        \end{itemize}
+        \item First-order reactions move faster at the beginning than at any other time, so if you go into lab and your reaction is not working early on, it's not then just going to start working later! You should probably cut your losses and change something.
+        \item Also tells you how many half-lives you'd need in order to achieve a certain desired conversion.
+    \end{itemize}
+    \item Next up is second-order kinetics.
+    \begin{itemize}
+        \item There are two situations here.
+    \end{itemize}
+    \item Situation 1: Consider a reaction of the following form.
+    \begin{equation*}
+        \ce{A + A ->[$k$] P}
+    \end{equation*}
+    \begin{itemize}
+        \item The differential rate law here is
+        \begin{equation*}
+            \rate = k\cnc{A}^2
+        \end{equation*}
+        \item The integrated rate law may be derived from here.
+        \begin{equation*}
+            \frac{1}{\cnc[$t$]{A}} = kt+\frac{1}{\cnc[0]{A}}
+        \end{equation*}
+        \item A raw plot of this data is pitched down steeper in the beginning than a first-order plot.
+        \item We can also linearize once again.
+        \item Note that if we take natural logs (instead of plotting regular or linearized), the data will \emph{look} first-order early on and then diverge from linearity at higher conversions.
+        \begin{itemize}
+            \item This reveals a challenge: For rigorous determination of reaction orders, we need to follow the kinetic course over many, many half-lives.
+        \end{itemize}
+    \end{itemize}
+    \item Situation 2: Consider a reaction of the following form.
+    \begin{equation*}
+        \ce{A + B ->[$k$] P}
+    \end{equation*}
+    \begin{itemize}
+        \item The differential rate law here is
+        \begin{equation*}
+            \rate = k\cnc{A}\cnc{B}
+        \end{equation*}
+        \item Deriving the integrated rate law.
+        \begin{itemize}
+            \item If $\cnc[0]{B}\neq\cnc[0]{A}$, then we can scale $\cnc{B}$ by $\cnc{A}$:
+            \begin{equation*}
+                \cnc[t]{B} = \cnc[0]{B}-(\cnc[0]{A}-\cnc[$t$]{A})
+            \end{equation*}
+            \item We can then drop this substitution into the differential rate law, go through the integration, and arrive at
+            \begin{equation*}
+                \frac{1}{\cnc[0]{B}-\cnc[0]{A}}\left( \ln\frac{\cnc[$t$]{B}}{\cnc[$t$]{A}}-\ln\frac{\cnc[0]{B}}{\cnc[0]{A}} \right) = kt
+            \end{equation*}
+        \end{itemize}
+        \item We can linearize by plotting $\ln(\cnc[$t$]{B}/\cnc[$t$]{A})$ vs. time.
+        \begin{itemize}
+            \item The $y$-intercept defines our initial concentrations.
+            \item The slope is of the form $(\cnc[0]{B}-\cnc[0]{A})k$.
+        \end{itemize}
+    \end{itemize}
+    \item In situation 2, deriving $k$ through linearization would require the simultaneous tracking of $\cnc{A}$ and $\cnc{B}$. But this comes with experimental challenges.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{kAB2.png}
+        \caption{Experimentally measuring the rate constant for a two-component second-order reaction.}
+        \label{fig:kAB2}
+    \end{figure}
+    \begin{itemize}
+        \item Thus, we use a simplification: Pseudo-first order kinetics.
+        \item Here, we simplify our analysis by changing the reaction conditions. Specifically, we want to do this in such a way that the concentration of one component in this overall second-order reaction is constant with respect to time.
+        \item Most typically, this is done by using one reagent in a large excess so that changes in its concentration are negligible. Mathematically, the assumption is that if $\cnc[0]{B}\gg\cnc[0]{A}$, then $\cnc[$t$]{B}\approx\cnc[0]{B}$.
+        \item When we do this, we say that we're running the reaction "pseudofirst in \ce{A}."
+        \item Essentially, we've changed the rate law into
+        \begin{equation*}
+            \rate = \dv{\cnc{P}}{t}
+            = k\cnc{A}\cnc{B}
+            \approx \underbrace{k\cnc[0]{B}}_{\kobs}\cnc{A}
+        \end{equation*}
+        \item Practically, in order for the condition to be fulfilled, we need at least a 5 times excess of \ce{B}; 10 times is better.
+        \item When doing this in the lab, run the experiment with $\cnc[0]{B}$ equal to several different multiples of $\cnc[0]{A}$ --- e.g., $10\cnc[0]{A}$, $20\cnc[0]{A}$, and $30\cnc[0]{A}$ --- and extract $\kobs$ for each of them.
+        \begin{itemize}
+            \item Then plot $\kobs$ vs. $\cnc[0]{B}$ and extract $k$ (if the reaction is first-order in \ce{B}).
+            \item If the reaction is second order in \ce{B}, fit your data to $\kobs=k\cnc{B}^2$.
+        \end{itemize}
+    \end{itemize}
+    \item Let's now discuss the kinetics of multistep chemical processes.
+    \item Example: Consider a mechanism of the following form.
+    \begin{equation*}
+        \ce{A <=>[$k_1$][$k_2$] I ->[$k_2$] P}
+    \end{equation*}
+    \begin{itemize}
+        \item The overall differential rate law here is
+        \begin{equation*}
+            \rate = \dv{\cnc{P}}{t}
+            = k_2\cnc{I}
+        \end{equation*}
+        \item The issue here is that we can't easily measure $\cnc{I}$ directly! Thus, we need to measure it indirectly from what we know about the action of \ce{A} on the system.
+        \item Two main assumptions are used to solve for $\cnc{I}$: The \textbf{steady-state approximation} and the \textbf{quasi-equilibrium assumption}.
+    \end{itemize}
+    \item \textbf{Steady-state approximation}: If $\cnc{I}\ll\cnc{A}$, then $\dv*{\cnc{I}}{t}\approx 0$. \emph{Also known as} \textbf{SSA}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.3\linewidth]{PESssa.png}
+        \caption{Steady-state approximation potential energy surface.}
+        \label{fig:PESssa}
+    \end{figure}
+    \begin{itemize}
+        \item On a reaction coordinate diagram, this condition looks like \ce{A} having to proceed \emph{uphill} through \ce{I} to the product.
+        \item In rate law nomenclature, we want $k_{-1}\gg k_1$.\footnote{HWE as final mechanistic proposal??} This defines an endothermic equilibrium.
+    \end{itemize}
+    \item \textbf{Quasi-equilibrium assumption}: \ce{A <=> I} is reversible and remains in equilibrium throughout the process.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.25\linewidth]{PESqea.png}
+        \caption{Quasi-equilibrium assumption potential energy surface.}
+        \label{fig:PESqea}
+    \end{figure}
+    \begin{itemize}
+        \item On a reaction coordinate diagram, this condition looks like \ce{A} and \ce{I} reaching a finite equilibrium before product conversion.
+        \item Here, we expect $\cnc{I}$ to build up during the reaction!
+        \begin{itemize}
+            \item Thus, the steady-state approximation is not applicable in this case. 
+        \end{itemize}
+    \end{itemize}
+    \item Reference: \textcite{bib:SsaQea}.
+    \begin{itemize}
+        \item A very lucid description of these two approximations by a colleague, Ron Raines!
+    \end{itemize}
+    \item Let's try applying the steady-state approximation to our model reaction.
+    \begin{itemize}
+        \item We begin by writing an expression for all the ways that the concentration of \ce{I} can change.
+        \begin{equation*}
+            \dv{\cnc{I}}{t} = k_1\cnc{A}-k_{-1}\cnc{I}-k_2\cnc{I}
+        \end{equation*}
+        \item Then applying the SSA, we obtain
+        \begin{equation*}
+            0 = k_1\cnc{A}-k_{-1}\cnc{I}-k_2\cnc{I}
+        \end{equation*}
+        \item Rearranging then allows us to solve for $\cnc{I}$.
+        \begin{equation*}
+            \cnc{I} = \frac{k_1\cnc{A}}{k_{-1}+k_2}
+        \end{equation*}
+        \item We can then substitute this expression of observables back into our rate law, arriving at
+        \begin{equation*}
+            \rate = \dv{\cnc{P}}{t}
+            = k_2\cnc{I}
+            = \frac{k_1k_2\cnc{A}}{k_{-1}+k_2}
+            = \kobs\cnc{A}
+        \end{equation*}
+        where $\kobs=k_1k_2/(k_{-1}+k_2)$.
+    \end{itemize}
+    \item Example: Seeing the chemistry in all this math.
+    \begin{itemize}
+        \item Consider the following reaction.
+        \begin{center}
+            \includegraphics[width=0.55\linewidth]{SSAsn1.png}
+        \end{center}
+        \item Using our knowledge of organic chemistry, we can propose the following S\textsubscript{N}1 mechanism.
+        \begin{center}
+            \includegraphics[width=0.65\linewidth]{SSAsn1Mech.png}
+        \end{center}
+        \item Mathematically, the growth in product comes from the reaction of the intermediate with the cyano nucleophile.
+        \begin{equation*}
+            \dv{\cnc{P}}{t} = k_2\cnc{I}\cnc{CN-}
+        \end{equation*}
+        \item Now as before, write an expression for $\dv*{\cnc{I}}{t}$.
+        \begin{equation*}
+            \dv{\cnc{I}}{t} = k_1\cnc{A}-k_{-1}\cnc{I}\cnc{Cl-}-k_2\cnc{I}\cnc{CN-}
+        \end{equation*}
+        \item Apply the SSA and solve for \ce{I}.
+        \begin{equation*}
+            \cnc{I} = \frac{k_1\cnc{A}}{k_{-1}\cnc{Cl-}+k_2\cnc{CN-}}
+        \end{equation*}
+        \item Dropping this back into our rate law yields
+        \begin{equation*}
+            \dv{\cnc{P}}{t} = \frac{k_1k_2\cnc{A}\cnc{CN-}}{k_{-1}\cnc{Cl-}+k_2\cnc{CN-}}
+        \end{equation*}
+        \item This is a wild rate law for a sophomore organic transformation!
+    \end{itemize}
+    \item We can simplify the above rate law in some limiting cases.
+    \begin{itemize}
+        \item We do this by finding extrema that simplify the denominator.
+    \end{itemize}
+    \item Limiting case \#1: $k_{-1}\cnc{Cl-}\gg k_2\cnc{CN-}$.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\linewidth]{PESsn1Late.png}
+        \caption{Potential energy surface for an S\textsubscript{N}1 with an late rate-determing step.}
+        \label{fig:PESsn1Late}
+    \end{figure}
+    \begin{itemize}
+        \item What does this case mean, physically, though?
+        \begin{itemize}
+            \item In terms of the potential energy surface, it means that the return of \ce{I} to \ce{A} is faster than the conversion of \ce{I} to \ce{P}.
+            \item This implies that the second step is rate-determining.
+        \end{itemize}
+        \item Mathematically, we can drop the $k_2\cnc{CN-}$ term out of the denominator to simplify the rate law to
+        \begin{equation*}
+            \dv{\cnc{P}}{t} = \frac{k_1k_2\cnc{A}\cnc{CN-}}{k_{-1}\cnc{Cl-}}
+            = \kobs\cnc{A}\cnc{CN-}\cnc{Cl-}^{-1}
+        \end{equation*}
+        \begin{itemize}
+            \item This means that the reaction is inverse order in \ce{Cl-}, hence inhibited by the addition of exogeneous chloride.
+            \item However, it is also first-order in $\cnc{A}$ and $\cnc{CN-}$.
+        \end{itemize}
+    \end{itemize}
+    \item Limiting case \#1: $k_2\cnc{CN-}\gg k_{-1}\cnc{Cl-}$.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.28\linewidth]{PESsn1Early.png}
+        \caption{Potential energy surface for an S\textsubscript{N}1 with an early rate-determing step.}
+        \label{fig:PESsn1Early}
+    \end{figure}
+    \begin{itemize}
+        \item Physical interpretation.
+        \begin{itemize}
+            \item In terms of the potential energy surface, it means that the conversion of \ce{I} to \ce{P} is faster than the return of \ce{I} to \ce{A}.
+        \end{itemize}
+        \item Mathematically, we can drop the $k_{-1}\cnc{Cl-}$ term out of the denominator to simplify the rate law to
+        \begin{equation*}
+            \dv{\cnc{P}}{t} = \frac{k_1k_2\cnc{A}\cnc{CN-}}{k_2\cnc{CN-}}
+            = k_1\cnc{A}
+        \end{equation*}
+        \begin{itemize}
+            \item This reflects the sophomore-organic understanding of S\textsubscript{N}1 as a reaction in which the RDS depends only on $\cnc{A}$.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item But how could the rate not depend on \ce{CN-} at all? If there's no \ce{CN-}, the reaction won't proceed at all!
+    \begin{itemize}
+        \item The trick is that we have zeroeth-order dependence on the rate in the limit of large \ce{CN-} concentrations, and first-order dependence at very small \ce{CN-} concentrations.
+        \item Entering this so-called \textbf{saturation regime} is very common.
+        \item As \ce{CN-} is consumed, we transit along this curve and eventually enter a different kinetic regime!
+        \begin{itemize}
+            \item Not a different mechanism, but yes a change in the RDS.
+            \item Takeaway: The kinetic rate law depends on the conditions!
+        \end{itemize}
+    \end{itemize}
+    \item Always having to derive the rate law is a bit laborious, so here's a rule of thumb/cheat code (in the context of the SSA).
+    \begin{itemize}
+        \item The rate can be expressed as the product of all of the forward rate constants and concentrations, over the sum of the rate constants and concentrations of the ways that the intermediate can react.
+        \item Alex uses this shortcut to rederive the rate laws for the two previous applications of the SSA.
+    \end{itemize}
+    \item Caveat: In order for the SSA to work, it can only be applied to \emph{one} intermediate.
+    \begin{itemize}
+        \item Otherwise, the math breaks down.
+        \item So for a multistep process in which \ce{I} changes appreciably, we need to use the quasi-equilibrium assumption.
+    \end{itemize}
+    \item Using the quasi-equilibrium assumption.
+    \begin{itemize}
+        \item We know that
+        \begin{equation*}
+            \Keq = \frac{\cnc{I}}{\cnc{A}}
+        \end{equation*}
+        \item Additionally, we know that
+        \begin{equation*}
+            \Keq = \frac{k_1}{k_{-1}}
+        \end{equation*}
+        \item Thus, substituting back into the original rate law gives
+        \begin{equation*}
+            \rate = k_2\cnc{I}
+            = \underbrace{k_2\Keq}_{\kobs}\cnc{A}
+        \end{equation*}
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
