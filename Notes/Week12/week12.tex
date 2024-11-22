@@ -376,5 +376,350 @@
 
 
 
+\section{Techniques for Kinetics Determinations}
+\begin{itemize}
+    \item \marginnote{11/21:}Today: Experimental techniques for kinetic determination.
+    \begin{itemize}
+        \item In contrast to last time's algebra, we'll figure out today that many of those algebraic techniques were unnecessary.
+        \item Many techniques of kinetic analysis can be done with just a few observational experiments.
+        \item Goal of today: Convince us that kinetic analysis can be easy\dots and even fun!
+    \end{itemize}
+    \item Consider the following reaction from last time.
+    \begin{equation*}
+        \ce{A + B ->[cat] P}
+    \end{equation*}
+    \begin{itemize}
+        \item Recall from last time that kinetics can be used to elucidate the transition state structure.
+        \item Recall from last week that linearizing data can give us the reaction order.
+        \item However, we can access rate constant data without regression by using the \textbf{method of initial rates}.
+    \end{itemize}
+    \item \textbf{Method of initial rates}: Assume that $\rate=k\cnc{A}^a\cnc{B}^b\cnc{cat}^c$, take time courses, and make plots as in Figure \ref{fig:kAB2} to extract $k$.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.75\linewidth]{methodInitRate.JPG}
+        \caption{Method of initial rates.}
+        \label{fig:methodInitRate}
+    \end{figure}
+    \begin{itemize}
+        \item Begin by taking a time course for $\cnc{A}$.
+        \item We can extract $\kobs$ from initial slopes
+        \begin{equation*}
+            -\dv{\cnc{A}}{t} = \dv{\cnc{P}}{t} = \kobs
+        \end{equation*}
+        if we're in a regime where all of the other concentrations are basically constant.
+        \item If we consider the first, say, 10\% of the reaction, then this approximate initial slope gives us $\kobs$ directly.
+        \item We can vary the initial concentration of $\cnc{A}$ to get multiple values of $\kobs$.
+        \item Then --- as in Figure \ref{fig:kAB2} --- we can plot $\kobs$ vs. $\cnc{A}$ to learn the order of our reaction.
+    \end{itemize}
+    \item The time domain matters a lot.
+    \begin{itemize}
+        \item If $t\in[\SI{e2}{\second},\SI{e6}{\second}]$, we're in the "conventional" range for reaction speed.
+        \begin{itemize}
+            \item Techniques like NMR are applicable here. These can allows us to assign concentration and structure in one experiment.
+            \item UV-Vis can also be good here.
+            \item FT-IR is also nice; it's very fast.
+            \item GC-MS is another recommended one in the conventional time domain.
+        \end{itemize}
+        \item If $t\in[\SI{e-3}{\second},\SI{e1}{\second}]$, our reactions are too fast to pull out an aliquot.
+        \begin{itemize}
+            \item As such, we need stopped flow kinetics.
+        \end{itemize}
+        \item If $t\in[\SI{e-12}{\second},\SI{e-6}{\second}]$, our reactions are too fast for mechanical injection into a compartment.
+        \begin{itemize}
+            \item As such, use \textbf{flash photolysis}: Flash a light and follow the course with (typically) UV-Vis.
+        \end{itemize}
+    \end{itemize}
+    \item How can we directly read out rate data from a reaction?
+    \begin{itemize}
+        \item Calorimetry: The flow of heat from the vessel is directly related to the rate.
+        \item Mass transport and gas flow: Also good direct measurements.
+    \end{itemize}
+    \item Usefulness of the method of initial rates.
+    \begin{itemize}
+        \item Pros.
+        \begin{itemize}
+            \item No complex math.
+            \item Direct access to $\kobs$.
+            \item Easy.
+            \begin{itemize}
+                \item You've already got the starting materials, so just set up one more reaction!
+            \end{itemize}
+            \item Useful for trickier reactions with more complex kinetic scenarios, e.g., heterogeneous catalysis.
+        \end{itemize}
+        \item Cons.
+        \begin{itemize}
+            \item Prone to error ($\pm 10\%$ at best).
+            \begin{itemize}
+                \item We've got only a few data points from a short window in which not much has happened.
+            \end{itemize}
+            \item The first 10\% of the reaction course may not be representative of the entire reaction.
+            \begin{itemize}
+                \item In fact, there are many cases where the first 10\% is patently \emph{not} representative of the entire reaction (see Figure \ref{fig:complexTimecourse}).
+                \item Example: A burst of speed at the very beginning due, for example, to a catalyst turning over very quickly because there's a large amount of it unbound early on.
+                \item Example: An \textbf{induction period} before the reaction begins in earnest.
+            \end{itemize}
+            \item Can be labor intensive.
+            \begin{itemize}
+                \item We need several measurements of $\kobs$; two measurements define a straight line, technically, but at least three are needed to be experimentally viable.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Alex has personally done such initial rate experiments, despite the difficulties. But in the computer age, the method of initial rates has been outpaced by \textbf{whole-reaction kinetics}.
+    \begin{itemize}
+        \item We can take a bunch of data points, and the computer can just fit it to a curve.
+        \item We can then transform this into a linear plot of $\dv*{\cnc{A}}{t}$ vs. $\cnc{A}$.
+        \item Curve fitting via polynomial regression: Fit
+        \begin{equation*}
+            \cnc[$t$]{A} = f(t) = a+bt+ct^2+dt^3+et^4+ft^5+\cdots
+        \end{equation*}
+        \begin{itemize}
+            \item If we have enough terms, we can fit basically anything!
+            \item And then polynomials are nice because they're easily differentiated.
+        \end{itemize}
+        \item Computers can do all this.
+    \end{itemize}
+    \item How can we account for saturation kinetics?
+    \begin{itemize}
+        \item Recall that as $\cnc{A}$ decreases, we sometimes switch kinetic regimes.
+        \begin{itemize}
+            \item Such data may be hard to manipulate via linear regression.
+            \item This can be easier to look at on a rate vs. concentration plot than a concentration vs. time plot.
+        \end{itemize}
+        \item Note that on a rate vs. concentration plot, reactions with induction periods show up as humps.
+        \begin{itemize}
+            \item This is because the reaction takes a bit to get going (i.e., during the induction period), then accelerates to normal, and then tapers off.
+            \item We can still polynomial fit these!
+        \end{itemize}
+    \end{itemize}
+    \item Experimental chemistry offers all manner of complex kinetics, not just simple integrated rate laws.
+    \begin{itemize}
+        \item So we need powerful techniques.
+    \end{itemize}
+    \item To solve these challenges, use reaction progress kinetic analysis (RPKA).
+    \begin{itemize}
+        \item Developed by Donna Blackmond (Scripps) --- a modern genius of reaction kinetics.
+        \item She has a few valuable, albeit impenetrable, pieces of literature.
+        \begin{itemize}
+            \item \textcite{bib:RPKA1}.
+            \item \textcite{bib:RPKA2}.
+        \end{itemize}
+        \item This method does not shoehorn reactions into models that they don't fit.
+        \item Two relevant techniques.
+        \begin{itemize}
+            \item Same excess experiment.
+            \item Different excess experiment.
+        \end{itemize}
+    \end{itemize}
+    \item Same excess experiment.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \path (-1.4,0) -- (5.4,0);
+    
+                \small
+                \draw (0,3.2) -- node[left=8mm]{$\cnc{A}$} (0,0) -- node[below=4mm]{$t$} (4,0);
+    
+                \footnotesize
+                \draw (0.1,3)   -- ++(-0.2,0) node[left]{$\cnc[0]{A}$};
+                \draw (0.1,1.5) -- ++(-0.2,0) node[left]{$\frac{\cnc[0]{A}}{2}$};
+    
+                \draw [rex,thick] plot[domain=0:4] (\x,{3*e^(-1.3*\x)});
+                \draw [rex,thick] plot[domain=0:4] (\x,{1.5*e^(-1.3*\x)});
+            \end{tikzpicture}
+            \caption{Concentration vs. time plot.}
+            \label{fig:sameExcessa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \path (-1.4,0) -- (5.4,0);
+    
+                \small
+                \draw (0,3.2) -- node[left=4mm]{$v$} (0,0) -- node[below=4mm]{$\cnc{A}$} (4,0);
+    
+                \footnotesize
+                \draw [grx,thick] (0,0) -- (3,3);
+                \draw [grx,ultra thick] (0,0) -- (1.5,1.5);
+            \end{tikzpicture}
+            \caption{Rate vs. concentration plot.}
+            \label{fig:sameExcessb}
+        \end{subfigure}
+        \caption{Same excess experiment.}
+        \label{fig:sameExcess}
+    \end{figure}
+    \begin{itemize}
+        \item Recall Figure \ref{fig:modelCat2Kin}, and the corresponding rate law
+        \begin{equation*}
+            \dv{\cnc{P}}{t} = \frac{k_1k_2\cnc{A}\cnc{B}\cnc[T]{cat}}{k_{-1}+k_2\cnc{B}+k_1\cnc{A}}
+        \end{equation*}
+        \item Via the stoichiometry of \ce{A + B ->[cat] P}, we know that the following equality holds.
+        \begin{equation*}
+            \cnc[$t$]{B} = \underbrace{\cnc[0]{B}-\cnc[0]{A}}_\text{"excess"}+\cnc[$t$]{A}
+        \end{equation*}
+        \begin{itemize}
+            \item Note that "excess" refers to how much more \ce{B} there is, relative to \ce{A}. Because \ce{A} and \ce{B} both have coefficients of 1 in the balanced chemical equation, the excess is constant throughout this reaction.
+            \item This substitution also allows us to define reaction progress in terms of only one variable!
+        \end{itemize}
+        \item We now run two experiments (Figure \ref{fig:sameExcessa}).
+        \begin{itemize}
+            \item Experiment 1: Run the experiment with $\cnc[0]{A}=\SI{0.1}{\milli\mole}$ and a small excess $\cnc[0]{B}=\SI{0.12}{\milli\mole}$.
+            \begin{itemize}
+                \item Then the excess is \SI{0.02}{\milli\mole}.
+            \end{itemize}
+            \item Experiment 2: Run the experiment with $\cnc[0]{A}=\SI{0.05}{\milli\mole}$ and $\cnc[0]{B}=\SI{0.07}{\milli\mole}$.
+            \begin{itemize}
+                \item The excess is the same as last time: \SI{0.02}{\milli\mole}!
+            \end{itemize}
+        \end{itemize}
+        \item If the reaction is behaving in a well-defined way, we should see overlay via visual inspection of the rates in the derivative plot (Figure \ref{fig:sameExcessb}).
+        \begin{itemize}
+            \item Thus, we can assay whether the rates of two experiments are the same by whether or not the lines visually overlay.
+            \item Overlay is commonly the case, but in cases where we \emph{don't} get overlay, we get something really illuminating.
+        \end{itemize}
+    \end{itemize}
+    \item In what cases does a same excess experiment produce lines that do not overlay?
+    \begin{itemize}
+        \item Experiment 2 can proceed in a way such that it doesn't overlay.
+        \item Case 1: The reaction beginning from 50\% conversion is faster. What could explain this?
+        \begin{itemize}
+            \item Product inhibition.
+            \begin{itemize}
+                \item This is a big one!
+                \item For example, molecules of the catalyst could be held up by strong binding to the product.
+            \end{itemize}
+            \item Catalyst decomposition.
+        \end{itemize}
+        \item Both of these possibilities suggest new experiments.
+        \begin{itemize}
+            \item Start at 50\% completion but add 50\% product and look for overlay! This would provide evidence for a product inhibition pathway.
+            \item We could also think about varying catalyst percentage to provide evidence for a decomposition pathway.
+        \end{itemize}
+        \item Case 2: The reaction beginning from 50\% conversion is slower. What could explain this?
+        \begin{itemize}
+            \item Slow pre-equilibria.
+            \begin{itemize}
+                \item For example, there could be an increase in the effective catalyst concentration with time. This could happen if we need, for instance, a retro-dimerization to get the catalyst to its active state.
+            \end{itemize}
+            \item The product could improve rate via some kind of autocatalysis.
+            \begin{itemize}
+                \item This is rare, but not impossible.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item The value of visually inspecting rate vs. concentration plots is that they pop out relationships that are otherwise difficult to pull from curves.
+    \begin{itemize}
+        \item For example, we may only get a small difference in concentration vs. time curves toward the end of our time courses! This is easy to miss if we're not looking super closely.
+    \end{itemize}
+    \item Different excess experiment.
+    \begin{itemize}
+        \item Hold the concentration of one of the reagents steady, and change the excess of the other.
+        \item What if we get overlay here? 
+        \begin{itemize}
+            \item Then we learn that the rate does not vary with excessive concentrations of \ce{B}.
+            \item This means that the reaction is zero-order in \ce{B}!
+        \end{itemize}
+        \pagebreak
+        \item What does no overlay mean?
+        \begin{itemize}
+            \item There's a kinetic dependence on \ce{B}.
+            \item Mathematically, $v\approx\kobs\cnc{A}\cnc{B}$.
+            \item Thus, $v/\cnc{B}\approx\kobs\cnc{A}$!
+            \item Manipulating the exponent of $\cnc{B}$ then allows us to read out the order of \ce{B} from what exponent gives us a linear plot with overlay
+        \end{itemize}
+    \end{itemize}
+    \item Note that overlay yes/no is a binary judgement.
+    \begin{itemize}
+        \item But how do we know whether something is overlaying? How close does it have to be before we say, "yes, we're seeing overlay?"
+        \item There's some room for interpretation here.
+    \end{itemize}
+    \item Implication from excess experiments: Only these two experiments tell us everything we need to know, even in wildly complex scenarios.
+    \item A Blackmond paper exemplifying the power of excess experiments: \textcite{bib:complexTimecourse}.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{complexTimecoursea.JPG}
+            \caption{The time course.}
+            \label{fig:complexTimecoursea}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{complexTimecourseb.JPG}
+            \caption{The experimental data.}
+            \label{fig:complexTimecourseb}
+        \end{subfigure}
+        \caption{A complex time course.}
+        \label{fig:complexTimecourse}
+    \end{figure}
+    \begin{itemize}
+        \item This paper blew Alex's hair back when he read it.
+        \item The reaction is nominally pretty straightforward: Aldehyde plus azodicarboxylate in the presence of a chiral prolinate anion organocatalyst, stereoselectively yielding an $\alpha$-amination product.
+        \begin{center}
+            \includegraphics[width=0.7\linewidth]{complexTimecourseRxn.JPG}
+        \end{center}
+        \begin{itemize}
+            \item This is literally the same type of reaction as in Figure \ref{fig:modelCat2Kin}.
+        \end{itemize}
+        \item The rate was measured via calorimetry in a relevant concentration domain (we didn't have to do weird flooding as with Figure \ref{fig:kAB2}).
+        \item Result: We have a complex positive order in $\cnc{A}$, and a complex \emph{inverse} order in $\cnc{B}$ (i.e., at higher concentrations of \ce{B}, the reaction goes slower).
+        \item The time course (rate vs. time) is fast acceleration, then slowing down, then speeding up, then dead.
+        \begin{itemize}
+            \item Here, the full rate course data is \emph{essential} to figuring out what's going on. We would be so wrong it's not even funny if we tried to do method of initial rates here!
+            \item As an experimentalist, Alex would first think that his calorimeter is horribly broken. But this is rigorous at different concentrations; this \emph{is} the kinetics!
+        \end{itemize}
+        \item You can simulate time courses using software packages like COPASI.
+    \end{itemize}
+    \item The full mechanism that Blackmond and colleagues ended up determining.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\linewidth]{complexTimecourseMech.JPG}
+        \caption{Mechanism underlying an example complex time course.}
+        \label{fig:complexTimecourseMech}
+    \end{figure}
+    \begin{itemize}
+        \item This involves an off-cycle equilibrium of the catalyst being sequestered by one of the reagents.
+        \item Formation of the enamine is rate-determining.
+        \item How important is this whole paper? Alex doesn't know. The beauty of the process may be lost on you if you're a synthetic organic chemist and only care about getting the product.
+    \end{itemize}
+    \item Challenges with RPKA: Measuring rates directly is difficult, and converting concentration data to rate data propagates some error.
+    \item Spiritual successor to RPKA: Variable time normalization analysis (VTNA).
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{VTNA.JPG}
+        \caption{Variable time normalization analysis.}
+        \label{fig:VTNA}
+    \end{figure}
+    \begin{itemize}
+        \item Reference: Work by Jordi Bur\'{e}s.
+        \begin{itemize}
+            \item Initial set of papers: \textcite{bib:VTNA1}.
+            \item A really useful tutorial: \textcite{bib:VTNA2}.
+        \end{itemize}
+        \item Collect concentration vs. time data (e.g., via GC-MS aliquots as per usual).
+        \item Change the total catalyst concentration $\cnc[T]{cat}$ and look how the rates change.
+        \item Key insight: $\cnc[T]{cat}$ is basically constant during the reaction, so just treat it as a parameter of the system.
+        \item Normalize to $\cnc{cat}^n$ by varying $n$ until you get overlay and call that the order!
+    \end{itemize}
+    \pagebreak
+    \item Using VTNA, you can also normalize not only to something that's constant, but to something that's variable.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{VTNAdiffExcess.JPG}
+        \caption{Variable time normalization analysis (different excess experiment).}
+        \label{fig:VTNAdiffExcess}
+    \end{figure}
+    \begin{itemize}
+        \item Do a different excess experiment.
+        \item Experiment 1: Run it with $\cnc[1]{A}$, $\cnc[1]{B}$, and $\cnc[1]{cat}$.
+        \item Experiment 2: Keep $\cnc[2]{A}=\cnc[1]{A}$ and $\cnc[2]{cat}=\cnc[1]{cat}$, but change $\cnc[2]{B}\neq\cnc[1]{B}$.
+        \item $\cnc{B}$ is being consumed during the reaction, so it's changing in a stoichiometric fashion.
+        \item Use the trapezoid rule to integrate under the Experiment 2 curve. Then plot $\cnc{A}$ vs. our new time-normalized $x$-axis, and vary $\beta$ until we get the correct reaction order.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
