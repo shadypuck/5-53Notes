@@ -426,5 +426,143 @@
 
 
 
+\section{Exam 2 Review Sheet}
+\begin{itemize}
+    \item \marginnote{12/4:}Noncovalent interactions.
+    \begin{itemize}
+        \item Quadrupoles preferentially bind hard, positively charged ions.
+        \item The strongest hydrogen bonds have short bond lengths and are nearly linear; vice versa for weak.
+        \item There is an energetic penalty to mixing polar and nonpolar solvents. The penalty is mostly entropic, because putting a hydrophobic link in the water disrupts the water's ability to randomly hydrogen bond to itself. Less \ce{H}-bonding means more ordered, less entropic water.
+    \end{itemize}
+    \item Transition states are first-order saddle points on a hypersurface defined by vibrational DOFs.
+    \begin{itemize}
+        \item $\Delta G=-RT\ln\Keq$.
+        \item $\Delta G^\ddagger=-RT\ln k$.
+        \item $\Delta\Delta G^\ddagger=-RT\ln(k_{\ce{A}}/k_{\ce{B}})$
+    \end{itemize}
+    \item \textbf{van't Hoff analysis}: Experimental determination of $\Delta H^\circ$ and $\Delta S^\circ$.
+    \begin{align*}
+        -RT\ln\Keq &= \Delta H^\circ-T\Delta S^\circ\\
+        R\ln\Keq &= -\Delta H^\circ\left( \frac{1}{T} \right)+\Delta S^\circ
+    \end{align*}
+    \item Fragmentations give \kcal{9}, or \eu{30} at \SI{300}{\kelvin}.
+    \item Transition state theory.
+    \begin{itemize}
+        \item General form.
+        \begin{equation*}
+            \ce{A <=>[$K^\ddagger$] [TS] ->[$k^\ddagger$] B}
+        \end{equation*}
+        \item Postulates.
+        \begin{enumerate}
+            \item Activated complex is in quasi-equilibrium with starting material.
+            \item Any molecule that makes its way to the transition state will then proceed onto the product barrierlessly ($\kappa=1$).
+        \end{enumerate}
+        \item The number of times a starting material appears in the TS is it's order in the rate law.
+        \item Eyring equation:
+        \begin{equation*}
+            k = \kappa\left( \frac{\kB T}{h} \right)\e[-\Delta G^\ddagger/RT]
+        \end{equation*}
+        \begin{itemize}
+            \item Linearization (for experimental determination of $\Delta H^\ddagger$ and $\Delta S^\ddagger$):
+            \begin{equation*}
+                \ln(\frac{kh}{\kappa\kB T}) = -\frac{\Delta H^\ddagger}{R}\left( \frac{1}{T} \right)+\frac{\Delta S^\ddagger}{R}
+            \end{equation*}
+        \end{itemize}
+        \item Hammond postulate.
+    \end{itemize}
+    \item Isotope effects.
+    \begin{itemize}
+        \item QMech foundation:
+        \begin{align*}
+            E_n &= h\nu\left( n+\frac{1}{2} \right)&
+            \nu &= \frac{1}{2\pi}\sqrt{\frac{k}{\mu}}
+        \end{align*}
+        \item \ce{C-D} lower by \kcal{1.5}.
+        \item Equilibrium isotope effect:
+        \begin{equation*}
+            \frac{K_{\ce{H}}}{K_{\ce{D}}}
+        \end{equation*}
+        \item \ce{C-D} bonds hold onto their electrons more tightly.
+        \item Kinetic isotope effect.
+        \begin{equation*}
+            \KIE = \frac{k_{\ce{H}}}{k_{\ce{D}}}
+        \end{equation*}
+        \item Asymmetric stretch is the reaction coordinate.
+        \begin{itemize}
+            \item Symmetric stretch is the important orthogonal vector.
+            \item Under thermoneutral conditions with identical atoms on either side, $\KIE=\max$ because the symmetric stretch has no isotopic sensitivity.
+        \end{itemize}
+        \item Bent transition states have more contributions from bending mode isotopic sensitivities, but smaller overall sensitivities (1.5-3.5).
+        \item Quantum tunnelling can give anomously large KIEs.
+        \item Secondary isotope effects at the $\alpha$-position largely governed by out-of-plane bending modes.
+        \begin{itemize}
+            \item Going to a slacker potential: Normal $2^\circ$ KIE.
+            \item Going to a stiffer potential: Inverse $2^\circ$ KIE.
+        \end{itemize}
+        \item Secondary isotope effects at the $\beta$-position governed by hyperconjugation, or actually primary because involved (e.g., E\textsubscript{2}).
+        \item Experimental determination.
+        \begin{itemize}
+            \item Independent absolute rate measurement.
+            \item Intramolecular competition experiment.
+            \begin{itemize}
+                \item Correction: If
+                \begin{align*}
+                    C &:= \frac{\cnc{P_H}}{\cnc[0]{SM_H}}&
+                    R &:= \left( \frac{\cnc{SM_D}}{\cnc{SM_H}} \right)_t&
+                    R_0 &:= \left( \frac{\cnc{SM_D}}{\cnc{SM_H}} \right)_0
+                \end{align*}
+                then
+                \begin{equation*}
+                    \KIE = \frac{k_{\ce{H}}}{k_{\ce{D}}}
+                    = \frac{\ln(1-C)}{\ln\left[ (1-C)\cdot\frac{R}{R_0} \right]}
+                \end{equation*}
+            \end{itemize}
+            \item Intramolecular competition can probe post-rate-determining steps.
+            \begin{itemize}
+                \item Extract KIE from the product ratio at \emph{any} conversion.
+            \end{itemize}
+        \end{itemize}
+        \item Heavy-atom KIEs.
+        \begin{itemize}
+            \item Extracted at high conversions.
+            \item Choose a reference atom, take NMRs at high conversion, plug into conversion formula to get KIEs.
+            \item Can tell you what sites are involved in the RDS!
+            \item Conversion-\emph{dependent} isotopic enrichment is affiliated with the RDS.
+            \item Conversion-\emph{independent} isotopic enrichment is affiliated with post-RDS steps.
+        \end{itemize}
+    \end{itemize}
+    \item Rate laws.
+    \begin{itemize}
+        \item Zeroeth-order, first-order, and second-order integrated rate laws.
+        \item $\kobs$ vs. swamping concentrations to determine $k$.
+        \item SSA.
+        \begin{itemize}
+            \item If \ce{A} is more stable than \ce{B}, the SSA is valid.
+            \item If \ce{I} is depleted faster than it is formed, the SSA is valid.
+        \end{itemize}
+        \item QEA.
+        \begin{itemize}
+            \item Only valid when $k_{-1}>k_2$.
+        \end{itemize}
+        \item Limiting cases.
+        \item The saturation regime.
+        \item Defining the total concentration of the catalyst is often useful.
+        \item Michaelis-Menten kinetics.
+        \item Blackmond's work.
+        \begin{itemize}
+            \item Same-excess experiment and visual overlay.
+            \item Different excess experiment.
+        \end{itemize}
+    \end{itemize}
+    \item Kinetic resolution.
+    \begin{itemize}
+        \item Relations between conversion and ee.
+        \item Dynamic kinetic resolution: Going through an intermediate or other interconversion.
+        \item Curtin-Hammett kinetics.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
