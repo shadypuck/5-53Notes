@@ -24,15 +24,15 @@
         \item In which of these scenarios would the steady-state approximation \emph{not} be valid? Provide a brief explanation for your answers.
         \begin{proof}
             % For the steady-state approximation to be valid, we need $\cnc{I}\ll\cnc{A}$. This often occurs when $k_{-1}\gg k_1$, and hence we have an endothermic initial equilibrium.  
-            The steady-state approximation would not be valid in \fbox{Scenarios \textbf{i}, \textbf{iii}, and \textbf{vi}.}\par
+            The steady-state approximation would not be valid in \fbox{Scenarios \textbf{i} and \textbf{iii}.}\par
             % Equivalently, we need $k_{-1}\gg k_1$. Both of these conditions define an \emph{endothermic} initial equilibrium
             \underline{\textbf{i}}: The initial equilbrium between \textbf{A} and \textbf{B} is exergonic, and there is a significant barrier before conversion to \textbf{C}. Symbolically, $k_1\gg k_{-1}\gg k_2$. Thus, most of the substrate will exist as \textbf{B}. Since $\cnc{\textbf{B}}\gg\cnc{\textbf{A}}$, the steady-state approximation does not hold.\par
             \underline{\textbf{iii}}: Again, it is easier for \textbf{A} to become \textbf{B} than for \textbf{B} to become \textbf{C}, so most of the substrate will sit as the intermediate.\par
-            \underline{\textbf{vi}}: There will be more \textbf{A} than \textbf{B}, but \textbf{B} will accumulate before it converts to \textbf{C}
+            Notes: If \ce{A} is more stable than \ce{B}, then the SSA is valid; the converse is not necessarily true.
         \end{proof}
         \item In which of these scenarios would the quasi-equilibrium assumption \emph{not} be valid? Provide a brief explanation for your answers.
         \begin{proof}
-            The quasi-equilibrium assumption would not be valid in \fbox{Scenarios \textbf{iv} and \textbf{v}.} In both of these, $k_2\gg k_1$, so it will be hard for \textbf{A} and \textbf{B} to effectively equilibrate before some \textbf{B} starts getting converted to product.
+            The quasi-equilibrium assumption would not be valid in \fbox{Scenarios \textbf{iii}, \textbf{iv}, and \textbf{v}.} The quasi-equilibrium assumption is only valid when $k_{-1}>k_2$.
         \end{proof}
         \item Consider a situation where \textbf{A} is isotopically labeled. If isotopic substitution affects only the rate of conversion of \textbf{B} to \textbf{C} (and not from \textbf{A} to \textbf{B}), in which scenarios might you expect to observe an independent rate kinetic isotope effect (KIE)? Please explain.
         \begin{proof}
@@ -40,7 +40,7 @@
         \end{proof}
         \item In which scenarios might you expect to observe an independent rate KIE if isotopic substitution affects only the step involving formation of \textbf{B} from \textbf{A} (and not from \textbf{B} to \textbf{C})?
         \begin{proof}
-            When the first step is rate-determining, we'll definitely see a KIE. But even when it is not, KIEs will affect $\cnc{\textbf{B}}$, altering the rate of the RDS! Thus, \fbox{all scenarios} display KIEs.
+            When the first step is rate-determining, we'll definitely see a KIE. But even when it is not, KIEs will affect $\cnc{\textbf{B}}$, altering the rate of the RDS! Thus, \fbox{all scenarios} display KIEs. Answers to all questions in \textcite{bib:SsaQea}.
         \end{proof}
     \end{enumerate}
     \pagebreak
@@ -188,6 +188,7 @@
                 = \kobs\cnc{\textbf{1}}
             \end{equation*}
             corresponding to the observation of that the reaction is pseudo-first-order in \textbf{1} under these conditions!\par
+            In the case of low concentrations of \textbf{2}, the rate law also collapses to an expression that is first-order in $\cnc{\textbf{2}}$, consistent with the plot.\par
             Furthermore, the proposed reversible first step would account for the hydrogen-deuterium exchange at the symmetric $\alpha$-carbons (even in the absence of \textbf{2}): \ce{D} could migrate from the phosphorus center to either $\alpha$-carbon, and then either \ce{D} or \ce{H} could migrate back.\par
             The final observation regarding the relative rates of \ce{H}/\ce{D} exchange vs. the rate of formation of \textbf{3} will be useful in part (c).
         \end{proof}
@@ -238,7 +239,7 @@
         \begin{proof}
             \ce{C-D} bonds have a slightly greater BDE than \ce{C-H} bonds. Thus, they hold onto their electrons more tightly and are less likely to participate in stabilizing interactions like hyperconjugation. Essentially, carbocations subject to $\sigma_{\ce{CH}}\to p_{\ce{C}}$ hyperconjugation will be more stable than those subject to $\sigma_{\ce{CD}}\to p_{\ce{C}}$ hyperconjugation, all else being equal. Thus, we should have
             \begin{equation*}
-                \boxed{K_1 > 1}
+                \boxed{K_1 < 1}
             \end{equation*}
             Note that $K_1$ will likely be only slightly greater than one: When we compared diaxial interactions between methyl groups and perdeuterated methyl groups in class, $\Keq$ was $1.042$.\par
             For $K_2$, the $\sigma_{\ce{CD}}$-orbital is orthogonal to the carbocation's $p_{\ce{C}}$ orbital, so it cannot stabilize it anyway. Thus, we should have
