@@ -4,6 +4,7 @@
 
 \externaldocument{notes}
 
+\setlength{\cftfignumwidth}{3em}
 \renewcommand{\contentsname}{Weeks}
 \renewcommand{\chaptername}{Week}
 
@@ -21,7 +22,9 @@
 
 \pagenumbering{roman}
 \tableofcontents
+\newpage
 \listoffigures
+\newpage
 \listoftables
 \newpage
 
@@ -56,6 +59,8 @@
 
 \stepcounter{chapter}
 \subfile{Week14/week14.tex}
+
+\subfile{Week15/week15.tex}
 
 \renewcommand{\leftmark}{References}
 \printbibliography[heading=bibintoc]
