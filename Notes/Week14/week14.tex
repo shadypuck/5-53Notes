@@ -9,7 +9,7 @@
 
 
 
-\chapter{???}
+\chapter{Exotic Reactivity}
 \section{Kinetic Resolution and Related Asymmetric Processes}
 \begin{itemize}
     \item \marginnote{12/3:}Announcements.
@@ -560,6 +560,294 @@
         \item Dynamic kinetic resolution: Going through an intermediate or other interconversion.
         \item Curtin-Hammett kinetics.
     \end{itemize}
+\end{itemize}
+
+
+
+\section{Electron Transfer}
+\begin{itemize}
+    \item \marginnote{12/5:}Through the end of the semester, we'll look at classes of reactions we haven't yet discussed.
+    \begin{itemize}
+        \item Thus far, we've looked at pairwise movements of electrons; we'll now get into single-electron transfer.
+        \item Broadly, this is \textbf{open shell chemistry}.
+    \end{itemize}
+    \item Today: The fundamentals of electron transfer processes.
+    \item Three types of electron transfer.
+    \begin{enumerate}
+        \item Electron transfer: A radical anion (donor) transfers to a neutral acceptor.
+        \begin{equation*}
+            \ce{D\ra{} + A -> D + A\ra}
+        \end{equation*}
+        \item Hole transfer: A donor transfers to an electron-deficient radical cation.
+        \begin{equation*}
+            \ce{D + A\rc{} -> D\rc{} + A}
+        \end{equation*}
+        \begin{itemize}
+            \item We can also think of this as a hole transfer from the acceptor to the donor.
+        \end{itemize}
+        \item Charge transfer: The donor and acceptor are both neutral, but are induced into a radical cation/anion pair.
+        \begin{equation*}
+            \ce{D + A -> D\rc{} + A\ra}
+        \end{equation*}
+    \end{enumerate}
+    \item How do we know when any of these electron transfers are spontaneous?
+    \begin{itemize}
+        \item To answer this question, we need to know something about the free energy of an electron transfer.
+        \item Said free energy is related as follows.
+        \begin{equation*}
+            \Delta G^\circ = -nF\Delta E^\circ
+            = -nF(\Delta E^\circ_{\ce{D}}-\Delta E^\circ_{\ce{A}})
+        \end{equation*}
+        \begin{itemize}
+            \item $n$ is the number of electrons transferred. $n=1$ in each of the above 3 examples.
+            \item $F=\SI[per-mode=symbol]{96485}{\coulomb\per\mole}$ is Faraday's constant.
+            \item $\Delta E^\circ$ is the standard reduction potential for the given species.
+            \item Double check this equation --- not sure it's right or what sign convention we're using??
+        \end{itemize}
+        \item But how do we determine standard reduction potentials?
+    \end{itemize}
+    \item Standard reduction potentials are determined using electrochemistry, most commonly cyclic voltammetry (CV).
+    \pagebreak
+    \item Cyclic voltammetry overview.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{CVsetup.JPG}
+        \caption{Cyclic voltammetry setup.}
+        \label{fig:CVsetup}
+    \end{figure}
+    \begin{itemize}
+        \item Take your analyte of interest (\ce{D}), dissolve it in a medium of interest, and to make your medium sufficiently conductive, also dissolve in an electrolyte.
+        \item In a 2-electrode system (which stands in contrast to some modern 3-electrode systems), bathe in the \textbf{working electrode} and \textbf{auxiliary electrode}.
+        \item Connect the two electrodes with a system that will allow us to continuously vary the voltage across those electrodes.
+        \item Modify the voltage until such a time as we close the circuit by donating an electron to \ce{D}, making it \ce{D\ra}.
+    \end{itemize}
+    \item Imagine your electrode as a metal that has a continuum of states up to a point.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{CVET.JPG}
+        \caption{Cyclic voltammetry electron transfer.}
+        \label{fig:CVET}
+    \end{figure}
+    \begin{itemize}
+        \item That point is denoted $E_0$.
+        \item The donor molecule will have some filled orbitals and empty orbitals. One of the filled orbitals is a HOMO, and the other is a LUMO.
+        \item By varying the potential, we can alter the electrochemical potential up, to the point that the electrode can spontaneously populate the donor's LUMO.
+    \end{itemize}
+    \item Sergei: Why is only one electron transferred to the LUMO if more than one is available?
+    \begin{itemize}
+        \item The Fermi level will probably be equal to the LUMO.
+        \item You can keep pumping electrons in if you apply a higher voltage.
+    \end{itemize}
+    \pagebreak
+    \item What does a cyclic voltammogram look like?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{CVgraph.JPG}
+        \caption{Cyclic voltammogram.}
+        \label{fig:CVgraph}
+    \end{figure}
+    \begin{itemize}
+        \item We plot current against voltage, starting at an open circuit potential $V_\text{OCP}:=0$.
+        \item As we decrease the voltage, we will essentially reach a point at which current begins being delivered (reduction) and subsequently slows (because of diffusion control).
+        \begin{itemize}
+            \item The shape rigorously depends on diffusion and more complex math that Alex won't go into.
+        \end{itemize}
+        \item Then as we scan back forward, we get oxidation.
+        \item $E_{1/2}$ is the midpoint of the two peaks, and is the reduction potential for the reaction
+        \begin{equation*}
+            \ce{D + e^- -> D\ra}
+        \end{equation*}
+    \end{itemize}
+    \item We also need a reference. Most frequently, we reference to the ferrocene/ferrocenium redox couple.
+    \begin{equation*}
+        \ce{Fc+ + e^- -> Fc}
+    \end{equation*}
+    \begin{itemize}
+        \item Note that $\ce{Fc}\equiv\ce{Cp2Fe^{II}}$.
+    \end{itemize}
+    \item Kinetics of electron transfer.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{ETDistort.JPG}
+        \caption{Electron transfer can induce geometric distortion.}
+        \label{fig:ETDistort}
+    \end{figure}
+    \begin{itemize}
+        \item In this example, we'll consider benzene and its reduction to the corresponding radical anion.
+        \item Recall that the frontier orbitals of benzene are given by H\"{u}ckel theory (see Figure \ref{fig:HuckelBenzene}).
+        \item Thus, in this reaction, we will drop an electron into a doubly degenerate frontier orbitals.
+        \begin{itemize}
+            \item The system will then distort to relieve that degeneracy and lower the energy of the overall system; this is called a \textbf{Jahn-Teller distortion}.
+            \item This also implies that the benzene radical anion will distort from perfect six-fold symmetry.
+        \end{itemize}
+        \item It could be a \ce{C-C} bond elongation, but the true distortion's nature is somewhat under debate.
+        \begin{itemize}
+            \item The actual distortion is likely a slight out of plane ruffling in a fedora/sombrero-type shape.
+        \end{itemize}
+    \end{itemize}
+    \item Let's now take a look at the self-exchange electron transfer reaction.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.45\linewidth]{ETselfExa.JPG}
+            \caption{Possible mechanism.}
+            \label{fig:ETselfExa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.53\linewidth]{ETselfExb.JPG}
+            \caption{Actual mechanism.}
+            \label{fig:ETselfExb}
+        \end{subfigure}
+        \caption{Self-exchange electron transfer.}
+        \label{fig:ETselfEx}
+    \end{figure}
+    \begin{itemize}
+        \item Mix benzene (\ce{A}) and the distorted benzene radical anion (\ce{B}).
+        \item If this does an electron transfer without any nuclear motion, it will then be followed by thermodynamically downhill nuclear reorganization, but this is in contrast with the law of conservation of energy, so it must not be this mechanism (Figure \ref{fig:ETselfExa}).
+        \begin{itemize}
+            \item Notice that the forward and reverse reactions also have different mechanisms here, so we are \emph{not} obeying microscopic reversibility.
+        \end{itemize}
+        \item Real mechanism: \ce{A} elongates and \ce{B} shrinks until we can have an energetically degenerate electron transfer (Figure \ref{fig:ETselfExb}).
+        \begin{itemize}
+            \item This is a closed thermodynamic square that is net neutral in free energy.
+            \item It also obeys the principle of microscopic reversibility!
+        \end{itemize}
+    \end{itemize}
+    \item Self-exchange electron transfer on a free energy surface.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{EDETselfEx.JPG}
+        \caption{Self-exchange electron transfer energy diagram.}
+        \label{fig:EDETselfEx}
+    \end{figure}
+    \begin{itemize}
+        \item Parabolic shape comes from the Morse potential and its harmonicity near the bottom.
+        \item Where the curves cross corresponds to the transition states where electron transfer happens.
+        \item This is a thermoneutral, degenerate reaction with $\Delta G_\text{rxn}=0$.
+        \item However, we can quantify the barrier $\Delta G^\ddagger$ to self exchange.
+        \item A Franck-Condon electron transfer with no nuclear motion is denoted by $\lambda$ and called the \textbf{reorganization energy}.
+    \end{itemize}
+    \item What about when electron transfer is nondegenerate?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.45\linewidth]{EDETnondegen.JPG}
+        \caption{Nondegenerate electron transfer energy diagram.}
+        \label{fig:EDETnondegen}
+    \end{figure}
+    \begin{itemize}
+        \item Apply the same formalism, but modify it: Simply shift the product parabola down.
+        \item To understand the kinetics, we still need to understand $\Delta G^\ddagger$.
+        \item We can do this as follows.
+    \end{itemize}
+    \item Consider the parabolas existing in a Cartesian plane, with the origin at the vertex of the starting material parabola (see Figure \ref{fig:EDETnondegen}).
+    \begin{itemize}
+        \item Then the product parabola has vertex at $(a,b)$.
+        \item It follows from a bit of algebra that
+        \begin{align*}
+            x^2 &= (x-a)^2+b\\
+            x &= \frac{b+a^2}{2a}
+        \end{align*}
+        so the parabolic curve crossing happens at
+        \begin{equation*}
+            \left( \frac{b+a^2}{2a},\frac{(b+a^2)^2}{4a^2} \right)
+        \end{equation*}
+        \item Additionally, $b$ is the $\Delta G$ of the reaction, and $a^2$ is the reorganization energy $\lambda$.
+        \item Thus,
+        \begin{equation*}
+            \Delta G^\ddagger = \frac{(\Delta G+\lambda)^2}{4\lambda}
+        \end{equation*}
+        \begin{itemize}
+            \item This is the \textbf{Marcus relationship}.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Example cases of electron transfer with varied driving force.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{ETforcea.JPG}
+            \caption{No driving force.}
+            \label{fig:ETforcea}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.93\linewidth]{ETforceb.JPG}
+            \caption{A driving force.}
+            \label{fig:ETforceb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{ETforcec.JPG}
+            \caption{Maximum driving force.}
+            \label{fig:ETforcec}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{ETforced.JPG}
+            \caption{Inverted driving force.}
+            \label{fig:ETforced}
+        \end{subfigure}
+        \caption{Electron transfer with different driving forces.}
+        \label{fig:ETforce}
+    \end{figure}
+    \begin{enumerate}
+        \item We could have no driving force.
+        \item We could have a driving force.
+        \item We could have a driving force so great that the transfer is barrierless.
+        \item We could have a driving force so great that we begin to get a barrier again!
+    \end{enumerate}
+    \item Electron transfer driving forces induce varying rates.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{ETforceRate.JPG}
+        \caption{Electron transfer rate with different driving forces.}
+        \label{fig:ETforceRate}
+    \end{figure}
+    \begin{itemize}
+        \item As we increase the driving force, we would decrease the barrier $\Delta G^\ddagger$.
+        \item Thus, the rate should increase with increasing driving force.
+        \item The rate should increase until $\Delta G_\text{rxn}=\lambda$, where the product parabola intersects the starting material vertex.
+        \item If we try to go faster than this, we have a driving force so profound that we build back in a barrier to the electron transfer.
+        \item However, practically, we reach the diffusional limit in rate.
+    \end{itemize}
+    \item Discovering the Marcus inverted region.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=0.65\linewidth]{marcusInva.JPG}
+            \caption{A designer molecule.}
+            \label{fig:marcusInva}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{marcusInvb.JPG}
+            \caption{Varying the acceptor.}
+            \label{fig:marcusInvb}
+        \end{subfigure}
+        \caption{Experimental design of Marcus inverted electron transfer.}
+        \label{fig:marcusInv}
+    \end{figure}
+    \begin{itemize}
+        \item Rudy Marcus made this theoretical prediction 50-60 years ago.
+        \item People tried to prove it by mixing very strong reductants and oxidants, but there was a flaw in this experimental setup: Diffusion control, aka the diffusional limit for bimolecular electron transfer.
+        \item Indeed, we needed to eliminate diffusion control, which we did by looking at unimolecular processes.
+        \item We took a biphenyl species, loaded it with an electron (as in Figure \ref{fig:ETselfEx}), and then studied it with pulse radiolysis (where we attach an electron onto the biphenyl with high-energy pulsed electrons).
+        \item The biphenyl was attached onto a rigid, steroidal hydrocarbon. This hydrocarbon is a linker of defined length, and then we appended an acceptor to the other end.
+        \item The acceptor was varied to change the driving force over about \kcal{40} (which is about \SI{2}{\electronvolt}).
+        \item Naphthalene is a weak acceptor, then anthracene is a bit better, then pyrene.
+        \item Then quinones, and halogenated quinones could finally get us to the Marcus inverted region.
+        \item This is a landmark paper in electron transfer theory: \textcite{bib:marcusInv}.
+        \item These donors and acceptors had likely all been explicitly studied in an intermolecular sense.
+        \begin{itemize}
+            \item Diffusion limit might have slowed reactions before the scenario in Figure \ref{fig:ETforcec}.
+        \end{itemize}
+        \item A lot of pulse radiolysis is done cryogenically, so diffusion was likely entirely taken out of consideration.
+    \end{itemize}
+    \item Next class: Photophysics, the photochemistry of excited states, etc.
 \end{itemize}
 
 
